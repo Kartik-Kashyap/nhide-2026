@@ -88,9 +88,11 @@ export const Layout: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-2 group" onClick={closeMenu}>
-            <div className="w-8 h-8 bg-navy-500 dark:bg-blue-600 rounded-md flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+            {/* <div className="w-8 h-8 bg-navy-500 dark:bg-blue-600 rounded-md flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
               N
-            </div>
+            </div> */}
+            <img src="resources/logo.png" alt="NHIDE-2026 Logo" className="w-8 h-8 rounded-md object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.6)] dark:drop-shadow-[0_0_18px_rgba(96,165,250,0.8)]" />
+
             <span className="font-bold text-lg md:text-xl tracking-tight text-navy-900 dark:text-white">
               <span className="text-navy-500 dark:text-blue-400">NHIDE</span>-2026
             </span>
@@ -175,7 +177,9 @@ export const Layout: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-2 mb-4 text-white">
-                <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center font-bold text-lg">N</div>
+               
+<img src="resources/logo.png" alt="NHIDE-2026 Logo" className="w-8 h-8 rounded-md object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.6)] dark:drop-shadow-[0_0_28px_rgba(96,165,250,0.8)]" />
+
                 <span className="font-bold text-xl">NHIDE-2026</span>
               </div>
               <p className="text-sm text-slate-400 mb-4">

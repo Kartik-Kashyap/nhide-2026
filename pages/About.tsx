@@ -16,8 +16,8 @@ const About: React.FC = () => {
             National Hackathon on Innovation, Design, and Entrepreneurship
           </p>
           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Hosted by Guru Ghasidas Vishwavidyalaya (A Central University), Bilaspur, Chhattisgarh, India.
-            <br className="hidden md:block" />
+            Hosted by Guru Ghasidas Vishwavidyalaya (A Central University), Bilaspur, Chhattisgarh, India. 
+            {/* <br className="hidden md:block" /> */}<br></br>
             NHIDE-2026 brings together innovators, entrepreneurs, and industry leaders to create impactful solutions 
             and foster a culture of innovation, design thinking, and entrepreneurial spirit.
           </p>

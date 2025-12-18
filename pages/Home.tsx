@@ -66,7 +66,8 @@ const Home: React.FC = () => {
 
             Capacity Building for Design and Entrepreneurship (CBDE)
 
-            <br className="hidden md:block" />
+            {/* <br className="hidden md:block" /> */}
+            <br></br>
 
             Guru Ghasidas Vishwavidyalaya (A Central University), Bilaspur, Chhattisgarh
 
