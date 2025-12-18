@@ -91,7 +91,7 @@ export const Layout: React.FC = () => {
             {/* <div className="w-8 h-8 bg-navy-500 dark:bg-blue-600 rounded-md flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
               N
             </div> */}
-            <img src="resources/logo.png" alt="NHIDE-2026 Logo" className="w-8 h-8 rounded-md object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.6)] dark:drop-shadow-[0_0_18px_rgba(96,165,250,0.8)]" />
+            <img src="/resources/logo.png" alt="NHIDE-2026 Logo" className="w-8 h-8 rounded-md object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.6)] dark:drop-shadow-[0_0_18px_rgba(96,165,250,0.8)]" />
 
             <span className="font-bold text-lg md:text-xl tracking-tight text-navy-900 dark:text-white">
               <span className="text-navy-500 dark:text-blue-400">NHIDE</span>-2026
@@ -178,7 +178,7 @@ export const Layout: React.FC = () => {
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-2 mb-4 text-white">
                
-<img src="resources/logo.png" alt="NHIDE-2026 Logo" className="w-8 h-8 rounded-md object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.6)] dark:drop-shadow-[0_0_28px_rgba(96,165,250,0.8)]" />
+<img src="/resources/logo.png" alt="NHIDE-2026 Logo" className="w-8 h-8 rounded-md object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.6)] dark:drop-shadow-[0_0_28px_rgba(96,165,250,0.8)]" />
 
                 <span className="font-bold text-xl">NHIDE-2026</span>
               </div>
