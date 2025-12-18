@@ -1,0 +1,89 @@
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add some offset so the heading isn't touching the very top of the screen */
+#faq-section {
+  scroll-margin-top: 5rem; 
+}
+
+
+/* Force everything to be visible during capture */
+.pdf-capture-mode {
+  background-color: white !important;
+  color: black !important;
+}
+
+.pdf-capture-mode [data-index],
+.pdf-capture-mode .animate-fade-in,
+.pdf-capture-mode .transition-all {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  visibility: visible !important;
+}
+
+/* Ensure the timeline line and dots are colored correctly in the export */
+.pdf-capture-mode .bg-navy-500,
+.pdf-capture-mode .bg-blue-500 {
+  background-color: #3b82f6 !important; /* Force a blue color for the capture */
+  opacity: 1 !important;
+}
+
+#capture-area .md\:block {
+  display: block !important; /* Forces the triangle pointers to show even if window is small */
+}
+
+
+@layer utilities {
+  .pause {
+    animation-play-state: paused !important;
+  }
+}
+
+/* FIXED: Marquee animations */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee2 {
+  0% { transform: translateX(100%); } /* Start where first set ends */
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  display: flex !important;
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee2 {
+  display: flex !important;
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: marquee2 25s linear infinite;
+}
+
+/* Pause on hover */
+.group:hover .animate-marquee,
+.group:hover .animate-marquee2 {
+  animation-play-state: paused;
+}

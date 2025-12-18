@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NHIDE-2026 | National Hackathon on Innovation, Design, and Entrepreneurship</title>
+    <meta name="description" content="Join NHIDE-2026 at Guru Ghasidas Vishwavidyalaya, Bilaspur. National Hackathon on Innovation, Design, and Entrepreneurship. 19-20 March 2026. Win prizes up to ₹50,000." />
+    <meta property="og:title" content="NHIDE-2026 | National Hackathon on Innovation, Design, and Entrepreneurship" />
+    <meta property="og:description" content="Join NHIDE-2026 at Guru Ghasidas Vishwavidyalaya, Bilaspur. 19-20 March 2026. Win prizes up to ₹50,000." />
+    <meta property="og:image" content="https://picsum.photos/1200/630" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0B3D91" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                50: '#e6ebf4',
+                100: '#ccd7e9',
+                200: '#99afd3',
+                300: '#6687bd',
+                400: '#335fa7',
+                500: '#0B3D91', // Primary
+                600: '#093174',
+                700: '#072557',
+                800: '#04183a',
+                900: '#020c1d',
+              },
+              saffron: {
+                400: '#ffb366',
+                500: '#FF9933', // Accent
+                600: '#cc7a29',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons (Loaded via React, but ensuring no conflicts) -->
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
