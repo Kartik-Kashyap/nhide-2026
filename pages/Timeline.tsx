@@ -56,62 +56,79 @@ const Timeline: React.FC = () => {
   
   const printRef = useRef<HTMLDivElement>(null);
 
-  const handleDownloadImage = async () => {
-  // Target the specific capture area ID
-  const element = document.getElementById("capture-area");
-  if (!element) return;
+//   const handleDownloadImage = async () => {
+//   // Target the specific capture area ID
+//   const element = document.getElementById("capture-area");
+//   if (!element) return;
 
-  try {
-    const canvas = await html2canvas(element, {
-      scale: 2, // 2 is usually plenty for high-quality PNGs
-      useCORS: true,
-      logging: false,
-      backgroundColor: "#ffffff",
-      // These two lines are the secret to fixing "cramped" layouts:
-      windowWidth: 1200, // Force canvas to render as if screen is 1200px wide
-      windowHeight: element.scrollHeight,
+//   try {
+//     const canvas = await html2canvas(element, {
+//       scale: 2, // 2 is usually plenty for high-quality PNGs
+//       useCORS: true,
+//       logging: false,
+//       backgroundColor: "#ffffff",
+//       // These two lines are the secret to fixing "cramped" layouts:
+//       windowWidth: 1200, // Force canvas to render as if screen is 1200px wide
+//       windowHeight: element.scrollHeight,
       
-      onclone: (clonedDoc) => {
-        const capturedEl = clonedDoc.getElementById("capture-area");
-        if (capturedEl) {
-          // 1. Force padding so the cards don't touch the image edges
-          capturedEl.style.padding = "40px";
+//       onclone: (clonedDoc) => {
+//         const capturedEl = clonedDoc.getElementById("capture-area");
+//         if (capturedEl) {
+//           // 1. Force padding so the cards don't touch the image edges
+//           capturedEl.style.padding = "40px";
           
-          // 2. FORCE VISIBILITY: Find all cards and dots
-          // This fixes the "must scroll down" issue
-          const allElements = capturedEl.querySelectorAll('*');
-          allElements.forEach(el => {
-            // Remove any classes or styles that hide elements
-            const htmlEl = el as HTMLElement;
-            htmlEl.style.opacity = "1";
-            htmlEl.style.transform = "none";
-            htmlEl.style.visibility = "visible";
-            htmlEl.style.transition = "none";
-          });
+//           // 2. FORCE VISIBILITY: Find all cards and dots
+//           // This fixes the "must scroll down" issue
+//           const allElements = capturedEl.querySelectorAll('*');
+//           allElements.forEach(el => {
+//             // Remove any classes or styles that hide elements
+//             const htmlEl = el as HTMLElement;
+//             htmlEl.style.opacity = "1";
+//             htmlEl.style.transform = "none";
+//             htmlEl.style.visibility = "visible";
+//             htmlEl.style.transition = "none";
+//           });
 
-          // 3. Force the vertical timeline line to be 100% height
-          // Search for your glow line class
-          const line = capturedEl.querySelector('.shadow-glow-line') as HTMLElement;
-          if (line) {
-            line.style.height = "100%";
-            line.style.opacity = "1";
-          }
-        }
-      }
-    });
+//           // 3. Force the vertical timeline line to be 100% height
+//           // Search for your glow line class
+//           const line = capturedEl.querySelector('.shadow-glow-line') as HTMLElement;
+//           if (line) {
+//             line.style.height = "100%";
+//             line.style.opacity = "1";
+//           }
+//         }
+//       }
+//     });
 
-    // Generate and Download
-    const imgData = canvas.toDataURL("image/png", 1.0);
-    const link = document.createElement("a");
-    link.href = imgData;
-    link.download = "NHIDE_2026_Schedule.png";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+//     // Generate and Download
+//     const imgData = canvas.toDataURL("image/png", 1.0);
+//     const link = document.createElement("a");
+//     link.href = imgData;
+//     link.download = "NHIDE_2026_Schedule.png";
+//     document.body.appendChild(link);
+//     link.click();
+//     document.body.removeChild(link);
 
-  } catch (error) {
-    console.error("PNG Capture failed:", error);
-  }
+//   } catch (error) {
+//     console.error("PNG Capture failed:", error);
+//   }
+// };
+
+const handleDownloadImage = () => {
+  // Path to the file in your public folder
+  const imageUrl = "/schedule_shide_2026.jpg"; 
+  
+  // Create a temporary "anchor" element
+  const link = document.createElement("a");
+  link.href = imageUrl;
+  
+  // This attribute forces the browser to download instead of opening it
+  link.download = "NHIDE_2026_Schedule.jpg"; 
+  
+  // Trigger the click and clean up
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 
 //   const handleDownloadPdf = async () => {
@@ -239,9 +256,23 @@ const Timeline: React.FC = () => {
             📅 19–20 March, 2026 | 📍 Guru Ghasidas Vishwavidyalaya, Koni, Bilaspur (C.G.), India – 495009
           </p>
 
-          <button className="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 font-medium hover:bg-gray-50 transition-colors" onClick={handleDownloadImage}>
-            <Download size={18} /> Download Schedule PNG
-          </button>
+          {/* <button 
+  className="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 font-medium hover:bg-gray-50 transition-colors" 
+  onClick={handleDownloadImage}
+>
+  <Download size={18} /> Download Schedule PNG
+</button> */}
+<a
+
+              href="/schedule_nhide_2026.jpg" download
+
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 font-medium hover:bg-gray-50 transition-colors" 
+
+            >
+
+              <Download size={18} /> Download Schedule JPG 
+
+            </a>
         </div>
 
         {/* TIMELINE */}
