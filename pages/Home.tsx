@@ -95,7 +95,7 @@ const Home: React.FC = () => {
 
             <a
 
-              href="resources\brochure_nhide_2026.pdf" download
+              href="/brochure_nhide_2026.pdf" download
 
               className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-slate-750 transition-all flex items-center justify-center gap-2"
 
