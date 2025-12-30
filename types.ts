@@ -49,4 +49,15 @@ export interface Speaker {
   designation: string;
   organization: string;
   location: string;
+  image?: string;
+}
+
+export interface VentureCapitalist {
+  name: string;
+  designation: string;
+  organization: string;
+  location?: string;
+  image?: string;
+  logo?: string;
+  link?: string;
 }
