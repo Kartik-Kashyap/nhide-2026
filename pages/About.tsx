@@ -10,7 +10,6 @@ const ArrowDown = () => (
   </div>
 );
 
-// --- 1. Reusable Profile Card Component (Defined Internal) ---
 const ProfileCard: React.FC<{
   org: any;
   level: 'chief' | 'patron' | 'chair' | 'coordinator';
@@ -22,13 +21,28 @@ const ProfileCard: React.FC<{
   const isChief = level === 'chief';
   const isPatron = level === 'patron';
 
+  // Parse role to extract level label and designation
+  const roleParts = org.role.split(' - ');
+  const levelLabel = roleParts[0] || org.role;
+  const designation = roleParts[1] || '';
+
   return (
     <div className={`flex flex-col items-center group relative z-10 ${className}`}>
+      {/* Level Badge */}
+      <div className={`mb-3 px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px] border
+        ${isChief ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700' :
+          isPatron ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-300 dark:border-blue-700' :
+          level === 'chair' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-300 dark:border-purple-700' :
+          'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-300 dark:border-slate-700'}
+      `}>
+        {levelLabel}
+      </div>
+
       {/* Image Container */}
       <div className={`relative rounded-full overflow-hidden border-4 shadow-xl mb-4 transition-transform duration-300 group-hover:scale-105 bg-white dark:bg-slate-800
-        ${isChief ? 'w-40 h-40 border-saffron-500 shadow-saffron-500/20' :
+        ${isChief ? 'w-40 h-40 border-amber-500 shadow-amber-500/20' :
           isPatron ? 'w-32 h-32 border-blue-500 shadow-blue-500/20' :
-            'w-28 h-28 border-white dark:border-slate-700 shadow-slate-300/50 dark:shadow-none'}
+            'w-28 h-28 border-slate-300 dark:border-slate-700 shadow-slate-300/50 dark:shadow-none'}
       `}>
         <img
           src={org.image || "/placeholder-user.png"}
@@ -39,22 +53,107 @@ const ProfileCard: React.FC<{
 
       {/* Text Container */}
       <div className={`text-center transition-all bg-white dark:bg-slate-900 rounded-xl border shadow-sm
-        ${isChief || isPatron ? 'px-6 py-3 border-slate-100 dark:border-slate-800' : 'px-4 py-2 border-transparent bg-transparent shadow-none dark:bg-transparent'}
+        ${isChief || isPatron ? 'px-6 py-3 border-slate-100 dark:border-slate-800' : 'px-4 py-2 border-slate-100 dark:border-slate-800'}
       `}>
+        {/* Name */}
         <h3 className={`font-bold text-slate-900 dark:text-white ${isChief ? 'text-xl' : 'text-base'}`}>
           {org.name}
         </h3>
-        <p className={`font-bold uppercase tracking-widest mt-1
-          ${isChief ? 'text-saffron-600 text-xs' :
-            isPatron ? 'text-blue-600 text-xs' :
-              'text-slate-500 dark:text-slate-400 text-[10px]'}
-        `}>
-          {org.role}
-        </p>
+        
+        
+        
+        {/* Designation */}
+        {designation && (
+          <p className={`mt-1.5 font-medium leading-snug
+            ${isChief ? 'text-amber-600 dark:text-amber-400 text-xs' :
+              isPatron ? 'text-blue-600 dark:text-blue-400 text-xs' :
+              level === 'chair' ? 'text-purple-600 dark:text-purple-400 text-xs' :
+              'text-slate-500 dark:text-slate-400 text-[11px]'}
+          `}>
+            {designation}
+          </p>
+        )}
+
+        {/* Department (NEW) */}
+        {org.department && (
+          <p className={`mt-1.5 leading-snug text-slate-600 dark:text-slate-400
+            ${isChief || isPatron ? 'text-xs' : 'text-[11px]'}
+          `}>
+            {org.department}
+          </p>
+        )}
       </div>
     </div>
   );
 };
+
+// // --- 1. Reusable Profile Card Component (Updated) ---
+// const ProfileCard: React.FC<{
+//   org: any;
+//   level: 'chief' | 'patron' | 'chair' | 'coordinator';
+//   className?: string;
+// }> = ({ org, level, className = "" }) => {
+//   if (!org) return null;
+
+//   // Size and Style logic based on hierarchy level
+//   const isChief = level === 'chief';
+//   const isPatron = level === 'patron';
+
+//   // Parse role to extract level label and designation
+//   // Example: "Chief Patron - Hon'ble Vice-Chancellor" → ["Chief Patron", "Hon'ble Vice-Chancellor"]
+//   const roleParts = org.role.split(' - ');
+//   const levelLabel = roleParts[0] || org.role;
+//   const designation = roleParts[1] || '';
+
+//   return (
+//     <div className={`flex flex-col items-center group relative z-10 ${className}`}>
+//       {/* Level Badge (appears first) */}
+//       <div className={`mb-3 px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px] border
+//         ${isChief ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700' :
+//           isPatron ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-300 dark:border-blue-700' :
+//           level === 'chair' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-300 dark:border-purple-700' :
+//           'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-300 dark:border-slate-700'}
+//       `}>
+//         {levelLabel}
+//       </div>
+
+//       {/* Image Container */}
+//       <div className={`relative rounded-full overflow-hidden border-4 shadow-xl mb-4 transition-transform duration-300 group-hover:scale-105 bg-white dark:bg-slate-800
+//         ${isChief ? 'w-40 h-40 border-amber-500 shadow-amber-500/20' :
+//           isPatron ? 'w-32 h-32 border-blue-500 shadow-blue-500/20' :
+//             'w-28 h-28 border-slate-300 dark:border-slate-700 shadow-slate-300/50 dark:shadow-none'}
+//       `}>
+//         <img
+//           src={org.image || "/placeholder-user.png"}
+//           alt={org.name}
+//           className="w-full h-full object-cover"
+//         />
+//       </div>
+
+//       {/* Text Container */}
+//       <div className={`text-center transition-all bg-white dark:bg-slate-900 rounded-xl border shadow-sm
+//         ${isChief || isPatron ? 'px-6 py-3 border-slate-100 dark:border-slate-800' : 'px-4 py-2 border-slate-100 dark:border-slate-800'}
+//       `}>
+//         {/* Name (now second) */}
+//         <h3 className={`font-bold text-slate-900 dark:text-white ${isChief ? 'text-xl' : 'text-base'}`}>
+//           {org.name}
+//         </h3>
+        
+//         {/* Designation (now third, if exists) */}
+//         {designation && (
+//           <p className={`mt-1.5 font-medium leading-snug
+//             ${isChief ? 'text-amber-600 dark:text-amber-400 text-xs' :
+//               isPatron ? 'text-blue-600 dark:text-blue-400 text-xs' :
+//               level === 'chair' ? 'text-purple-600 dark:text-purple-400 text-xs' :
+//               'text-slate-500 dark:text-slate-400 text-[11px]'}
+//           `}>
+//             {designation}
+//           </p>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
 
 const About: React.FC = () => {
   return (

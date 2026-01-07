@@ -40,6 +40,7 @@ export interface NavItem {
 export interface Organizer {
   name: string;
   role: string;
+  department?: string;
   email: string;
   image?: string;
 }

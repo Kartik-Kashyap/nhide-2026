@@ -187,63 +187,127 @@ export const KEY_CONTACTS: Organizer[] = [
 ];
 
 // Full Organizing Committee - Organized by hierarchy
+// export const ORGANIZERS: Organizer[] = [
+//   // Chief Patron
+//   {
+//     name: 'Prof. Alok Kumar Chakrawal',
+//     role: 'Chief Patron - Hon\'ble Vice-Chancellor',
+//     email: '',
+//     // image: '/images/organizers/prof-alok-kumar-chakrawal.jpg', // Placeholder path
+//     image: 'https://static.toiimg.com/thumb/msid-98022404,width-400,resizemode-4/98022404.jpg'
+//   },
+//   // Patron
+//   {
+//     name: 'Prof. Ashwini Kumar Dixit',
+//     role: 'Patron - Registrar',
+//     email: '',
+//     image: '/images/organizers/prof-ashwini-kumar-dixit.jpg', // Placeholder path
+//     // image: 'https://www.ggu.ac.in/media/FacultyPersonalInfo/photo/ashwini-kumar-dixit.JPG'
+//   },
+//   // Chairman & Convenor
+//   {
+//     name: 'Prof. Ratnesh Singh',
+//     role: 'Chairman - Principal Investigator, CBDE',
+//     email: 'ratnesh.singh75@ggu.ac.in',
+//     image: '/images/organizers/prof-ratnesh-singh.jpg', // Placeholder path
+//     // image: 'https://ggu.ac.in/media/staff/PROF._RATNESH_SINGH_g9UyeqK.jpg'
+//   },
+//   {
+//     name: 'Prof. T. V. Arjunan',
+//     role: 'Convenor - Co-Principal Investigator, CBDE',
+//     email: 'arjun_nivi@yahoo.com',
+//     // image: '/images/organizers/prof-tv-arjunan.jpg', // Placeholder path
+//     image: 'https://www.ggu.ac.in/media/FacultyPersonalInfo/photo/TV_Arjunan.jpeg'
+//   },
+//   // Coordinators 1 & 2
+//   {
+//     name: 'Dr. Suraj Sharma',
+//     role: 'Coordinator',
+//     email: '',
+//     image: '/images/organizers/dr-suraj-sharma.jpg', // Placeholder path
+//   },
+//   {
+//     name: 'Dr. T. G. Loganathan',
+//     role: 'Coordinator',
+//     email: '',
+//     image: '/images/organizers/dr-tg-loganathan.jpg', // Placeholder path
+//   },
+//   // Coordinators 3 & 4
+//   {
+//     name: 'Mr. Bhushan Singh Gautam',
+//     role: 'Coordinator',
+//     email: '',
+//     image: '/images/organizers/mr-bhushan-singh-gautam.jpg', // Placeholder path
+//   },
+//   {
+//     name: 'Dr. Mahavir Hiralal Ghante',
+//     role: 'Coordinator',
+//     email: '',
+//     image: '/images/organizers/dr-mahavir-hiralal-ghante.jpg', // Placeholder path
+//   }
+// ];
+
 export const ORGANIZERS: Organizer[] = [
   // Chief Patron
   {
     name: 'Prof. Alok Kumar Chakrawal',
     role: 'Chief Patron - Hon\'ble Vice-Chancellor',
+    department: 'Guru Ghasidas Vishwavidyalaya, Bilaspur (C.G.), India',
     email: '',
-    // image: '/images/organizers/prof-alok-kumar-chakrawal.jpg', // Placeholder path
     image: 'https://static.toiimg.com/thumb/msid-98022404,width-400,resizemode-4/98022404.jpg'
   },
   // Patron
   {
     name: 'Prof. Ashwini Kumar Dixit',
     role: 'Patron - Registrar',
+    department: 'GGV, Bilaspur',
     email: '',
-    image: '/images/organizers/prof-ashwini-kumar-dixit.jpg', // Placeholder path
-    // image: 'https://www.ggu.ac.in/media/FacultyPersonalInfo/photo/ashwini-kumar-dixit.JPG'
+    image: '/images/organizers/prof-ashwini-kumar-dixit.jpg',
   },
   // Chairman & Convenor
   {
     name: 'Prof. Ratnesh Singh',
-    role: 'Chairman - Principal Investigator, CBDE',
+    role: 'Chairman - Professor, Dept. of Physical Education',
+    department: 'Principal Investigator, CBDE',
     email: 'ratnesh.singh75@ggu.ac.in',
-    image: '/images/organizers/prof-ratnesh-singh.jpg', // Placeholder path
-    // image: 'https://ggu.ac.in/media/staff/PROF._RATNESH_SINGH_g9UyeqK.jpg'
+    image: '/images/organizers/prof-ratnesh-singh.jpg',
   },
   {
     name: 'Prof. T. V. Arjunan',
-    role: 'Convenor - Co-Principal Investigator, CBDE',
+    role: 'Convenor - Professor, Dept. of Mechanical Engg.',
+    department: 'Co-Principal Investigator, CBDE',
     email: 'arjun_nivi@yahoo.com',
-    // image: '/images/organizers/prof-tv-arjunan.jpg', // Placeholder path
     image: 'https://www.ggu.ac.in/media/FacultyPersonalInfo/photo/TV_Arjunan.jpeg'
   },
   // Coordinators 1 & 2
   {
     name: 'Dr. Suraj Sharma',
     role: 'Coordinator',
+    department: 'Associate Professor, Dept. of Computer Science & Engg.',
     email: '',
-    image: '/images/organizers/dr-suraj-sharma.jpg', // Placeholder path
+    image: '/images/organizers/dr-suraj-sharma.jpg',
   },
   {
     name: 'Dr. T. G. Loganathan',
     role: 'Coordinator',
+    department: 'Associate Professor, Dept. of Mechanical Engg.',
     email: '',
-    image: '/images/organizers/dr-tg-loganathan.jpg', // Placeholder path
+    image: '/images/organizers/dr-tg-loganathan.jpg',
   },
   // Coordinators 3 & 4
   {
     name: 'Mr. Bhushan Singh Gautam',
     role: 'Coordinator',
+    department: 'Assistant Professor, Dept. of Mechanical Engg.',
     email: '',
-    image: '/images/organizers/mr-bhushan-singh-gautam.jpg', // Placeholder path
+    image: '/images/organizers/mr-bhushan-singh-gautam.jpg',
   },
   {
     name: 'Dr. Mahavir Hiralal Ghante',
     role: 'Coordinator',
+    department: 'Assistant Professor, Dept. of Pharmacy',
     email: '',
-    image: '/images/organizers/dr-mahavir-hiralal-ghante.jpg', // Placeholder path
+    image: '/images/organizers/dr-mahavir-hiralal-ghante.jpg',
   }
 ];
 
