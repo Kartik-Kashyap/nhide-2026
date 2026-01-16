@@ -2,7 +2,7 @@ import { NavItem, Theme, ThemeDifficulty, EventItem, Prize, Organizer, Speaker, 
 import { Lightbulb, Leaf, Stethoscope, GraduationCap, Wallet, RefreshCw, Cpu, Globe } from 'lucide-react';
 
 export const GOOGLE_FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSc-5J3VjmMQ-xqIiSfFf8vDeAWp8GV0e3rlttfBUNcnVWhV-w/viewform?usp=publish-editor"; // Placeholder - Update with actual form link
-export const BROCHURE_LINK = "resources/brochure_nhide_2026.pdf"; // Placeholder - Update with actual brochure link
+export const BROCHURE_LINK = "/brochure_nhide_2026.pdf";
 // export const CONTACT_EMAIL = "ratnesh.singh75@ggu.ac.in";
 export const CONTACT_EMAIL = "contact@nhide2026.in";
 
@@ -12,7 +12,7 @@ export const NAV_LINKS: NavItem[] = [
   { label: 'About', path: '/about' },
   { label: 'Themes', path: '/themes' },
   { label: 'Timeline', path: '/timeline' },
-  { label: 'Register', path: '/register' },
+  { label: 'Submission', path: '/submission' },
 ];
 
 export const THEMES: Theme[] = [
@@ -102,48 +102,46 @@ export const THEMES: Theme[] = [
 export const TIMELINE: EventItem[] = [
   {
     id: 'e1',
-    title: 'Announcement & Call for Teams',
-    date: 'December 2026',
-    description: 'Official launch of NHIDE-2026. Organising committee formed. Thematic areas released.',
-    isCompleted: false
+    title: 'Call for Proposal Announcement',
+    date: '15 Jan 2026',
+    description: 'Official call for innovation proposals across all thematic areas. Guidelines and problem statements released.',
+    isCompleted: true // Today's Date
   },
   {
     id: 'e2',
-    title: 'Registration Opens',
-    date: 'January 2026',
-    description: 'Team registrations begin via Google Form. Submit abstracts and team details.',
+    title: 'Proposal Submission Deadline',
+    date: '23 Feb 2026',
+    description: 'Last date to submit your initial innovation proposals for screening and selection.',
     isCompleted: false
   },
   {
     id: 'e3',
-    title: 'Registration Deadline',
-    date: 'Early March 2026',
-    description: 'Last date to submit team details, initial ideas, and preferred thematic areas.',
+    title: 'Selection Announcement',
+    date: '25 Feb 2026',
+    description: 'Results of the screening process. Selected teams will be notified for the final registration phase.',
     isCompleted: false
   },
   {
     id: 'e4',
-    title: 'Shortlist Announcement',
-    date: 'Mid March 2026',
-    description: 'Selected teams announced for NHIDE-2026 final round.',
+    title: 'Selected Participant Registration',
+    date: '25 Feb 2026',
+    description: 'Registration portal opens exclusively for teams whose proposals were successfully shortlisted.',
     isCompleted: false
   },
   {
     id: 'e5',
-    title: 'NHIDE-2026 Day 1',
-    date: 'Mar 19, 2026',
-    time: '09:00 AM',
-    location: 'Guru Ghasidas Vishwavidyalaya, Koni, Bilaspur (C.G.)',
-    description: 'Opening ceremony, keynote sessions, panel talks, workshops, and hacking begins.',
+    title: 'Final Registration Deadline',
+    date: '01 Mar 2026',
+    description: 'Last date for selected teams to confirm their participation and finalize team details.',
     isCompleted: false
   },
   {
     id: 'e6',
-    title: 'NHIDE-2026 Day 2 & Judging',
-    date: 'Mar 20, 2026',
-    time: '05:00 PM',
-    location: 'Guru Ghasidas Vishwavidyalaya, Koni, Bilaspur (C.G.)',
-    description: 'Hacking continues, expert lectures, final pitching to investors and judges, winner announcement.',
+    title: 'NHIDE-2026 Main Event',
+    date: '19-20 Mar 2026',
+    time: '09:00 AM',
+    location: 'Guru Ghasidas Vishwavidyalaya, Bilaspur (C.G.)',
+    description: 'The grand finale: Two days of hacking, mentoring, workshops, pitching to VCs, and the award ceremony.',
     isCompleted: false
   }
 ];
@@ -254,7 +252,7 @@ export const ORGANIZERS: Organizer[] = [
     role: 'Chief Patron - Hon\'ble Vice-Chancellor',
     department: 'Guru Ghasidas Vishwavidyalaya, Bilaspur (C.G.), India',
     email: '',
-    image: 'https://static.toiimg.com/thumb/msid-98022404,width-400,resizemode-4/98022404.jpg'
+    image: '/images/organizers/vc-prof-alok-kumar.jpeg',
   },
   // Patron
   {
@@ -262,7 +260,7 @@ export const ORGANIZERS: Organizer[] = [
     role: 'Patron - Registrar',
     department: 'GGV, Bilaspur',
     email: '',
-    image: '/images/organizers/prof-ashwini-kumar-dixit.jpg',
+    image: '/images/organizers/prof-ashwini-kumar-dixit.jpeg',
   },
   // Chairman & Convenor
   {
@@ -270,14 +268,14 @@ export const ORGANIZERS: Organizer[] = [
     role: 'Chairman - Professor, Dept. of Physical Education',
     department: 'Principal Investigator, CBDE',
     email: 'ratnesh.singh75@ggu.ac.in',
-    image: '/images/organizers/prof-ratnesh-singh.jpg',
+    image: '/images/organizers/prof-ratnesh-singh.jpeg',
   },
   {
     name: 'Prof. T. V. Arjunan',
     role: 'Convenor - Professor, Dept. of Mechanical Engg.',
     department: 'Co-Principal Investigator, CBDE',
     email: 'arjun_nivi@yahoo.com',
-    image: 'https://www.ggu.ac.in/media/FacultyPersonalInfo/photo/TV_Arjunan.jpeg'
+    image: '/images/organizers/prof-tv-arjunan.jpeg'
   },
   // Coordinators 1 & 2
   {
@@ -285,14 +283,14 @@ export const ORGANIZERS: Organizer[] = [
     role: 'Coordinator',
     department: 'Associate Professor, Dept. of Computer Science & Engg.',
     email: '',
-    image: '/images/organizers/dr-suraj-sharma.jpg',
+    image: '/images/organizers/dr-suraj-sharma.jpeg',
   },
   {
     name: 'Dr. T. G. Loganathan',
     role: 'Coordinator',
     department: 'Associate Professor, Dept. of Mechanical Engg.',
     email: '',
-    image: '/images/organizers/dr-tg-loganathan.jpg',
+    image: '/images/organizers/dr-tg-loganathan.jpeg',
   },
   // Coordinators 3 & 4
   {
@@ -300,14 +298,14 @@ export const ORGANIZERS: Organizer[] = [
     role: 'Coordinator',
     department: 'Assistant Professor, Dept. of Mechanical Engg.',
     email: '',
-    image: '/images/organizers/mr-bhushan-singh-gautam.jpg',
+    image: '/images/organizers/mr-bhushan-singh-gautam.jpeg',
   },
   {
     name: 'Dr. Mahavir Hiralal Ghante',
     role: 'Coordinator',
     department: 'Assistant Professor, Dept. of Pharmacy',
     email: '',
-    image: '/images/organizers/dr-mahavir-hiralal-ghante.jpg',
+    image: '/images/organizers/dr-mahavir-hiralal-ghante.jpeg',
   }
 ];
 
@@ -318,63 +316,63 @@ export const SPEAKERS: Speaker[] = [
     designation: 'Programme Director, Capacity Building on Design and Entrepreneurship',
     organization: 'Ministry of Education, GoI, IIITDM',
     location: 'Kanchipuram, Tamil Nadu',
-    image: '/images/speakers/dr-sudhir-varatharajan.jpg' // Placeholder path
+    image: '/images/speakers/dr-sudhir-varatharajan.jpeg' // Placeholder path
   },
   {
     name: 'Dr. Alok Kumar Tripathi',
     designation: 'Whole Time Director',
     organization: 'NTPC GE Power Services Pvt. Ltd.',
     location: 'Noida, Uttar Pradesh',
-    image: '/images/speakers/dr-alok-kumar-tripathi.jpg' // Placeholder path
+    image: '/images/speakers/dr-alok-kumar-tripathi.jpeg' // Placeholder path
   },
   {
     name: 'Dr. A. B. Mukherjee',
     designation: 'Former Director (Retd.), RPG',
     organization: 'BARC',
     location: 'Mumbai, Maharashtra',
-    image: '/images/speakers/dr-ab-mukherjee.jpg' // Placeholder path
+    image: '/images/speakers/dr-ab-mukherjee.jpeg' // Placeholder path
   },
   {
     name: 'Mr. Rajdeep Dewangan',
     designation: 'Director',
     organization: 'DFMEA Technosol',
     location: 'Bengaluru, Karnataka',
-    image: '/images/speakers/mr-rajdeep-dewangan.jpg' // Placeholder path
+    image: '/images/speakers/mr-rajdeep-dewangan.jpeg' // Placeholder path
   },
   {
-    name: 'Mr. Vibhas Ambekar',
-    designation: 'Managing Director',
-    organization: 'Helical Technology',
-    location: 'Bengaluru, Karnataka',
-    image: '/images/speakers/mr-vibhas-ambekar.jpg' // Placeholder path
+    name: 'Mr. Saurav Sao',
+    designation: 'Head of Engineering',
+    organization: 'AMLock, VP Engineering',
+    location: 'Azentio Software',
+    image: '/images/speakers/mr-saurav-sao.jpeg' // Placeholder path
   },
   {
     name: 'Mr. B. R. Naresh',
     designation: 'Founder',
     organization: 'Czar Solutions',
     location: 'Pune, Maharashtra',
-    image: '/images/speakers/mr-br-naresh.jpg' // Placeholder path
+    image: '/images/speakers/mr-br-naresh.jpeg' // Placeholder path
   },
   {
     name: 'Mr. Ajit Ekbote',
     designation: 'Sr. Deputy General Manager (Retd.) & Guest Lecturer',
     organization: 'Vedic Mathematics Teacher',
     location: 'Bengaluru, Karnataka',
-    image: '/images/speakers/mr-ajit-ekbote.jpg' // Placeholder path
+    image: '/images/speakers/mr-ajit-ekbote.jpeg' // Placeholder path
   },
   {
     name: 'Mr. Siddharth Bhatter',
     designation: 'Founder & CEO',
     organization: 'Karkhana Makerspace, Co-Founder, Karkhana Hub',
     location: 'NCR, Delhi',
-    image: '/images/speakers/mr-siddharth-bhatter.jpg' // Placeholder path
+    image: '/images/speakers/mr-siddharth-bhatter.jpeg' // Placeholder path
   },
   {
     name: 'Mr. Nandan Kr Singh',
     designation: 'Director',
     organization: 'Twinverse Technologies',
     location: 'Bhubaneswar, Odisha',
-    image: '/images/speakers/mr-nandan-kr-singh.jpg' // Placeholder path
+    image: '/images/speakers/mr-nandan-kr-singh.jpeg' // Placeholder path
   }
 ];
 
@@ -401,42 +399,42 @@ export const VENTURE_CAPITALISTS: VentureCapitalist[] = [
 
 
 export const SPONSORS = [
-  { 
-    name: "Ministry of Education", 
+  {
+    name: "Ministry of Education",
     // logo: "https://scetngp.com/wp-content/uploads/2023/04/logonew1.jpg", 
     logo: "/images/sponsors/moe-modified3.png",
-    link: "https://www.education.gov.in/" 
+    link: "https://www.education.gov.in/"
   },
-  { 
-    name: "Guru Ghasidas Vishwavidyalaya", 
+  {
+    name: "Guru Ghasidas Vishwavidyalaya",
     // logo: "https://placehold.co/200x80/0f172a/white?text=GGV+Bilaspur", 
     logo: "https://www.ggu.ac.in/media/BasePageImage/GGV-logo.png",
     // logo: "/images/sponsors/Guru_Ghasidas_University_Insignia.jpeg",
-    link: "https://www.ggu.ac.in/" 
+    link: "https://www.ggu.ac.in/"
   },
-  { 
-    name: "AICTE", 
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/All_India_Council_for_Technical_Education_logo.png/316px-All_India_Council_for_Technical_Education_logo.png", 
-    link: "https://www.aicte-india.org/" 
+  {
+    name: "AICTE",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/All_India_Council_for_Technical_Education_logo.png/316px-All_India_Council_for_Technical_Education_logo.png",
+    link: "https://www.aicte-india.org/"
   },
-  { 
-    name: "Digital India", 
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Digital_India_logo.svg/330px-Digital_India_logo.svg.png", 
-    link: "https://www.digitalindia.gov.in/" 
+  {
+    name: "Digital India",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Digital_India_logo.svg/330px-Digital_India_logo.svg.png",
+    link: "https://www.digitalindia.gov.in/"
   },
-  { 
-    name: "Startup India", 
-    logo: "https://vectorseek.com/wp-content/uploads/2023/08/Startup-India-Hub-Logo-Vector.svg-.png", 
-    link: "https://www.startupindia.gov.in/" 
+  {
+    name: "Startup India",
+    logo: "https://vectorseek.com/wp-content/uploads/2023/08/Startup-India-Hub-Logo-Vector.svg-.png",
+    link: "https://www.startupindia.gov.in/"
   },
-  { 
-    name: "HCL", 
+  {
+    name: "HCL",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/HCL_Technologies_logo.svg/1200px-HCL_Technologies_logo.svg.png?20100214041014", // Placeholder - add actual logo
-    link: "https://www.hcltech.com/" 
+    link: "https://www.hcltech.com/"
   },
-  { 
-    name: "NTPC", 
+  {
+    name: "NTPC",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/NTPC_Logo.svg/120px-NTPC_Logo.svg.png?20100830204023", // Placeholder - add actual logo
-    link: "https://www.ntpc.co.in/" 
+    link: "https://www.ntpc.co.in/"
   },
 ];

@@ -289,9 +289,9 @@ const About: React.FC = () => {
 
             {/* Level 4: Coordinators (Grouped) */}
             <div className="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-500 uppercase tracking-widest rounded-full border border-slate-200 dark:border-slate-700">
+              {/* <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-500 uppercase tracking-widest rounded-full border border-slate-200 dark:border-slate-700">
                 Coordinators
-              </div>
+              </div> */}
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Coord 1 & 2 */}
@@ -304,25 +304,44 @@ const About: React.FC = () => {
             </div>
 
             {/* Level 5: Committee Members List */}
-            <div className="mt-16 max-w-4xl text-center">
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">Committee Members</h4>
-              <div className="flex flex-wrap justify-center gap-3">
-                {[
-                  "Prof. Anand Murty Mishra", "Prof. Chandra Shekhar Gahan", "Dr. Madhulika Singh", "Dr. Vishnu Prasad Yadav",
-                  "Dr. Niraj Kumari", "Dr. Kundan Meshram", "Dr. Vanita Soni", "Dr. Nishant Behar", "Dr. Raksha Pandey",
-                  "Dr. Shreemat Dash", "Dr. Rajbhanu Patel", "Dr. Budh Singh", "Dr. B. P. Singh Dohare", "Dr. Manoj Gupta",
-                  "Dr. Ajay Amit", "Dr. Garima Tiwari", "Mr. Anurag Singh", "Mr. Somnath Singrol", "Dr. Abhishek Jain",
-                  "Dr. Vikas Rajpopat", "Dr. Sagar Jaiswal", "Dr. Prem Shankar Dwivedi", "Dr. Neha Gaikwad", "Dr. Samarjit Singh",
-                  "Dr. Biplab Das", "Dr. Achal Mishra", "Dr. Vijay Kumar Chaurasiya", "Dr. Pradip Das", "Dr. Prasoon Soni",
-                  "Dr. Sushant Kumar Verma", "Mr. Suman Lakra", "Dr. Shiv Kumar", "Dr. Murli Manohar Singh", "Dr. Ghanshyam Dubey",
-                  "Dr. Nahid Hasan"
-                ].map((name, i) => (
-                  <span key={i} className="px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs text-slate-600 dark:text-slate-300">
-                    {name}
-                  </span>
-                ))}
+              <div className="mt-20 max-w-6xl mx-auto w-full">
+                <div className="flex items-center justify-center gap-4 mb-10">
+                   <div className="h-px w-12 bg-slate-300 dark:bg-slate-700"></div>
+                   <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest">Committee Members</h4>
+                   <div className="h-px w-12 bg-slate-300 dark:bg-slate-700"></div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {[
+                    { name: "Dr. Manoj Gupta", role: "Associate Professor", dept: "Dept. of ECE" },
+                    { name: "Dr. Nishant Behar", role: "Associate Professor", dept: "Dept. of CSE" },
+                    { name: "Dr. Garima Tiwari", role: "Asst. Prof.", dept: "Dept. of Forestry" },
+                    { name: "Dr. Vishnu Prasad Yadav", role: "Asst. Prof.", dept: "Dept. of Chemical Engg." },
+                    { name: "Dr. Niraj Kumari", role: "Asst. Prof.", dept: "Dept. of Chemistry" },
+                    { name: "Dr. Neha Gaikwad", role: "Asst. Prof.", dept: "Dept. of Management" },
+                    { name: "Dr. Samarjit Singh", role: "Asst. Prof.", dept: "Mechanical Engg. Dept." },
+                    { name: "Dr. Madhulika Singh", role: "Asst. Prof.", dept: "Dept. of Botany" },
+                    { name: "Dr. Biplab Das", role: "Asst. Prof.", dept: "Mechanical Engg. Dept." },
+                    { name: "Dr. Sushant Kumar Verma", role: "Asst. Prof.", dept: "Dept. of Zoology" },
+                    { name: "Dr. Raksha Pandey", role: "Asst. Prof.", dept: "Dept. of CSE" },
+                    { name: "Dr. Vikas Rajpopat", role: "Asst. Prof.", dept: "Dept. of JMC" },
+                    { name: "Dr. Achal Mishra", role: "Asst. Prof.", dept: "Dept. of Pharmacy" },
+                    { name: "Dr. Prasoon Soni", role: "Asst. Prof.", dept: "Dept. of Rural Tech." },
+                    { name: "Mr. Somnath Singrol", role: "Asst. Prof.", dept: "Dept. of IPE" },
+                    { name: "Mr. Anurag Singh", role: "Asst. Prof.", dept: "Dept. of IPE" },
+                  ].map((member, i) => (
+                    <div key={i} className="group flex flex-col items-center justify-center p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700/50 shadow-sm hover:shadow-md hover:border-blue-500/30 transition-all duration-300">
+                      <h5 className="font-bold text-slate-800 dark:text-slate-100 text-sm text-center mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {member.name}
+                      </h5>
+                      <div className="flex flex-col items-center text-[10px] md:text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-tight text-center">
+                        <span>{member.role}</span>
+                        <span className="text-slate-400 dark:text-slate-500">{member.dept}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
 
           </div>
         </div>
@@ -330,9 +349,12 @@ const About: React.FC = () => {
 
       {/* Keynote Speakers - TRADING CARDS */}
       <section className="container mx-auto px-4 md:px-6 py-24 border-t border-slate-100 dark:border-slate-800/50">
-        <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4 text-center">
           Voices of Innovation
         </h2>
+        <p className="text-center text-slate-600 dark:text-slate-400 mb-16 max-w-2xl mx-auto">
+            Meet the Key-Note Speakers and Resource Persons at NHIDE-2026.
+          </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {SPEAKERS.map((speaker, index) => (
             <div key={index} className="group relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-2">

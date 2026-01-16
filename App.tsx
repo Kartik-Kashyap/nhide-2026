@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Themes from './pages/Themes';
 import Timeline from './pages/Timeline';
-import Register from './pages/Register';
+import Submission from './pages/Submission';
 
 const App: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const App: React.FC = () => {
           <Route path="about" element={<About />} />
           <Route path="themes" element={<Themes />} />
           <Route path="timeline" element={<Timeline />} />
-          <Route path="register" element={<Register />} />
+          <Route path="submission" element={<Submission />} />
         </Route>
       </Routes>
     </HashRouter>

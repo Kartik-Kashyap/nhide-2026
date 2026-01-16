@@ -7,6 +7,13 @@ export const Layout: React.FC = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  
+  // 1. NEW STATE: Manage the Legal Modal (Privacy/Terms)
+  const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'privacy' | 'terms' }>({
+    isOpen: false,
+    type: 'privacy'
+  });
+
   const location = useLocation();
 
   // --- Scroll Monitor ---
@@ -247,13 +254,103 @@ export const Layout: React.FC = () => {
 
           <div className="border-t border-slate-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-600">
             <p>&copy; {new Date().getFullYear()} NHIDE-2026. All rights reserved.</p>
+            
+            {/* 2. UPDATED FOOTER LINKS: Now clickable buttons that toggle the modal */}
             <div className="flex items-center gap-6">
-              <span>Privacy Policy</span>
-              <span>Terms of Service</span>
+              <button 
+                onClick={() => setLegalModal({ isOpen: true, type: 'privacy' })}
+                className="hover:text-blue-500 transition-colors cursor-pointer"
+              >
+                Privacy Policy
+              </button>
+              <button 
+                onClick={() => setLegalModal({ isOpen: true, type: 'terms' })}
+                className="hover:text-blue-500 transition-colors cursor-pointer"
+              >
+                Terms of Service
+              </button>
             </div>
           </div>
         </div>
       </footer>
+
+      {/* 3. NEW: Legal Modal Rendered here */}
+      <LegalModal 
+        isOpen={legalModal.isOpen} 
+        type={legalModal.type} 
+        title={legalModal.type === 'privacy' ? 'Privacy Policy' : 'Terms & Conditions'}
+        onClose={() => setLegalModal({ ...legalModal, isOpen: false })} 
+      />
+
+    </div>
+  );
+};
+
+// --- 4. NEW: Legal Modal Component ---
+const LegalModal: React.FC<{ isOpen: boolean; onClose: () => void; title: string; type: 'privacy' | 'terms' }> = ({ isOpen, onClose, title, type }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+        onClick={onClose}
+      ></div>
+
+      {/* Modal Content */}
+      <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col max-h-[80vh] animate-scale-in">
+        
+        {/* Header */}
+        <div className="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800">
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white">{title}</h3>
+          <button onClick={onClose} className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Close modal">
+            <X size={20} className="text-slate-500" />
+          </button>
+        </div>
+
+        {/* Scrollable Text Area */}
+        <div className="p-6 overflow-y-auto prose prose-slate dark:prose-invert prose-sm max-w-none">
+          {type === 'privacy' ? (
+            <>
+              <p><strong>Last Updated: January 2026</strong></p>
+              <p>At NHIDE-2026, we value your privacy. This policy outlines how we handle your data.</p>
+              <h4>1. Information Collection</h4>
+              <p>We collect information such as your name, email, phone number, and academic details solely for the purpose of event registration and communication.</p>
+              <h4>2. How We Use Your Data</h4>
+              <ul>
+                <li>To verify your eligibility for the hackathon.</li>
+                <li>To send important updates regarding the schedule and shortlisting.</li>
+                <li>To generate certificates and awards.</li>
+              </ul>
+              <h4>3. Data Sharing</h4>
+              <p>We do <strong>not</strong> sell your data. Your information is shared only with the internal organizing committee and verified industry mentors/sponsors for recruitment purposes (if applicable).</p>
+            </>
+          ) : (
+            <>
+              <p><strong>Last Updated: January 2026</strong></p>
+              <h4>1. Intellectual Property (IP)</h4>
+              <p><strong>You own what you build.</strong> The Intellectual Property (IP) of the project developed during the hackathon belongs to the team. However, NHIDE-2026 and GGV reserve the right to use your project details for publicity and reporting purposes.</p>
+              <h4>2. Code of Conduct</h4>
+              <p>We have a zero-tolerance policy for harassment. All participants must treat others with respect. Plagiarism or using pre-built projects will lead to immediate disqualification.</p>
+              <h4>3. Liability</h4>
+              <p>The organizers are not responsible for any damage to personal equipment (laptops, hardware) during the event.</p>
+              <h4>4. Media Rights</h4>
+              <p>By participating, you grant us permission to capture photos and videos during the event for promotional use on social media and our website.</p>
+            </>
+          )}
+        </div>
+
+        {/* Footer */}
+        <div className="p-4 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+          <button 
+            onClick={onClose}
+            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-colors"
+          >
+            Understood
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
