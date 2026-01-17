@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { THEMES, GOOGLE_FORM_LINK } from '../constants';
-import { Download, ExternalLink, Filter, Cpu, Users, Lightbulb } from 'lucide-react';
+import { Link as RouterLink } from 'react-router-dom';  // ADD THIS
+import { Download, ExternalLink, Filter, Cpu, Users, Lightbulb, Link as LinkIcon, ArrowRight } from 'lucide-react';  // RENAME Link to LinkIconimport { ThemeDifficulty } from '../types';
 import { ThemeDifficulty } from '../types';
 import html2canvas from 'html2canvas';
 
@@ -81,15 +82,24 @@ const Themes: React.FC = () => {
                 Download Catalogue
               </button>
 
-              <a
-                href={GOOGLE_FORM_LINK}
+              {/* <a
+                href="/#/submission"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1"
               >
-                Register Your Team
+                Proposal Submission
                 <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </a>
+              </a> */}
+
+              <RouterLink
+  to="/submission"
+  className="w-full sm:w-auto px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1"
+>
+  Proposal Submission                 <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+
+</RouterLink>
+              
             </div>
           </div>
         </div>

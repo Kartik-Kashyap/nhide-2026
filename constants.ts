@@ -1,7 +1,7 @@
 import { NavItem, Theme, ThemeDifficulty, EventItem, Prize, Organizer, Speaker, VentureCapitalist } from './types';
 import { Lightbulb, Leaf, Stethoscope, GraduationCap, Wallet, RefreshCw, Cpu, Globe } from 'lucide-react';
 
-export const GOOGLE_FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSc-5J3VjmMQ-xqIiSfFf8vDeAWp8GV0e3rlttfBUNcnVWhV-w/viewform?usp=publish-editor"; // Placeholder - Update with actual form link
+export const GOOGLE_FORM_LINK = "https://forms.gle/9K1DfkjjM4GuEukk6"; // Placeholder - Update with actual form link
 export const BROCHURE_LINK = "/brochure_nhide_2026.pdf";
 // export const CONTACT_EMAIL = "ratnesh.singh75@ggu.ac.in";
 export const CONTACT_EMAIL = "contact@nhide2026.in";

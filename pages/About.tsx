@@ -512,7 +512,7 @@ const About: React.FC = () => {
                    <a 
                      href="https://www.google.com/maps/dir//Guru+Ghasidas+Vishwavidyalaya,+Koni,+Bilaspur,+Chhattisgarh+495009" 
                      target="_blank" 
-                     rel="noreferrer"
+                     rel="noopener noreferrer"
                      className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-xl hover:scale-105 transition-transform shadow-lg"
                    >
                       Get Directions <ExternalLink size={16} />
