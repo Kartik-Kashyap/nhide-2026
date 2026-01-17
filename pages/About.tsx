@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, CheckCircle, AlertCircle, Users, Phone, MapPin, Linkedin, Globe } from 'lucide-react';
+import { Mail, CheckCircle, AlertCircle, Users, Phone, MapPin, Linkedin, Globe, Award, ExternalLink } from 'lucide-react';
 import { ORGANIZERS, SPEAKERS, VENTURE_CAPITALISTS } from '../constants';
 
 const ArrowDown = () => (
@@ -463,105 +463,123 @@ const About: React.FC = () => {
           </p>
         </div> */}
 
-{/* Critical Contact Section */}
-<div className="mt-4 border-t border-slate-100 dark:border-slate-800/50"></div>
-
-<section className="container mx-auto px-4 md:px-6 py-20">
-  <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-16 text-center">
-    Contact Information
-  </h2>
-  <div className="max-w-6xl mx-auto">
-    {/* Grid Container */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-      
-      {/* Left Column - Contact Cards */}
-      {/* CHANGE 1: Used flex, flex-col, h-full, and gap-6 instead of space-y-6 */}
-      <div className="flex flex-col gap-6 h-full">
+{/* --- VENUE & SECRETARIAT SECTION --- */}
+      <section className="container mx-auto px-4 md:px-6 py-24 relative">
         
-        {/* Contact Card 1 */}
-        {/* CHANGE 2: Added 'flex-1' to make it stretch */}
-        <div className="flex-1 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl border border-blue-100 dark:border-blue-800/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div className="w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center shrink-0 mb-4">
-            <Users size={24} className="text-blue-600 dark:text-blue-400" />
+        <div className="flex flex-col items-center mb-16">
+           <span className="text-blue-600 dark:text-blue-400 font-bold tracking-widest text-xs uppercase mb-2">
+              Logistics & Administration
+           </span>
+           <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white text-center">
+             Venue & Secretariat
+           </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+          
+          {/* LEFT: THE VENUE (Takes up 2/3 space) */}
+          <div className="lg:col-span-2 relative group overflow-hidden rounded-[2.5rem] shadow-2xl shadow-slate-200 dark:shadow-black/50 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+             
+             {/* Map / Image Area */}
+             <div className="h-80 md:h-96 w-full bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3696.447693524357!2d82.13611931426615!3d22.133271985410673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a280b117b9ab6a7%3A0xc6f3f89d9e120536!2sGuru%20Ghasidas%20Vishwavidyalaya!5e0!3m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0, filter: 'invert(0%)' }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="group-hover:filter-none transition-all duration-700 relative z-10"
+                ></iframe>
+                
+                {/* Overlay Gradient (Pointer events removed so map is clickable) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 pointer-events-none z-20"></div>
+                
+                {/* Floating Location Badge */}
+                <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-4 py-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest shadow-lg text-slate-900 dark:text-white z-20 pointer-events-none">
+                   <MapPin size={14} className="text-red-500" /> Host Campus
+                </div>
+             </div>
+
+             {/* Venue Details */}
+             <div className="p-8 md:p-10">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                   <div>
+                      <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">Guru Ghasidas Vishwavidyalaya</h3>
+                      <p className="text-slate-500 dark:text-slate-400 font-medium">A Central University • Bilaspur, Chhattisgarh</p>
+                   </div>
+                   <a 
+                     href="https://www.google.com/maps/dir//Guru+Ghasidas+Vishwavidyalaya,+Koni,+Bilaspur,+Chhattisgarh+495009" 
+                     target="_blank" 
+                     rel="noreferrer"
+                     className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-xl hover:scale-105 transition-transform shadow-lg"
+                   >
+                      Get Directions <ExternalLink size={16} />
+                   </a>
+                </div>
+                <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-x-8 gap-y-2 text-sm text-slate-600 dark:text-slate-400">
+                   <span className="flex items-center gap-2"><MapPin size={16} className="text-blue-500" /> Koni, Bilaspur - 495009</span>
+                   <a href="http://www.ggu.ac.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                      <Globe size={16} className="text-blue-500" /> www.ggu.ac.in
+                   </a>
+                </div>
+             </div>
           </div>
-          <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-2">Prof. Ratnesh Singh</h4>
-          <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-4">Principal Investigator & Chairman</p>
-          <div className="space-y-2 text-sm">
-            <a href="tel:+919826200372" className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              <Phone size={14} /> +91 98262 00372
-            </a>
-            <a href="mailto:ratnesh.singh75@ggu.ac.in" className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              <Mail size={14} /> ratnesh.singh75@ggu.ac.in
-            </a>
+
+          {/* RIGHT: THE SECRETARIAT (Takes up 1/3 space) */}
+          <div className="lg:col-span-1 flex flex-col gap-6">
+             
+             {/* Card 1: Chairman */}
+             <div className="flex-1 bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-500/50 transition-colors flex flex-col justify-center">
+                <div className="flex items-start gap-4">
+                   <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                      <Award size={24} />
+                   </div>
+                   <div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-1">Administrative Chair</span>
+                      <h4 className="font-bold text-slate-900 dark:text-white text-lg">Prof. Ratnesh Singh</h4>
+                      <p className="text-xs text-slate-500 mb-4">Principal Investigator</p>
+                      
+                      <div className="space-y-2">
+                         <a href="tel:+919826200372" className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors">
+                            <Phone size={14} /> +91 98262 00372
+                         </a>
+                         <a href="mailto:ratnesh.singh75@ggu.ac.in" className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors break-all">
+                            <Mail size={14} /> ratnesh.singh75@ggu.ac.in
+                         </a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+             {/* Card 2: Convenor */}
+             <div className="flex-1 bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-purple-500/50 transition-colors flex flex-col justify-center">
+                <div className="flex items-start gap-4">
+                   <div className="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
+                      <Users size={24} />
+                   </div>
+                   <div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-1">Event Convenor</span>
+                      <h4 className="font-bold text-slate-900 dark:text-white text-lg">Prof. T. V. Arjunan</h4>
+                      <p className="text-xs text-slate-500 mb-4">Co-Principal Investigator</p>
+                      
+                      <div className="space-y-2">
+                         <a href="tel:+919894332446" className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400 hover:text-purple-500 transition-colors">
+                            <Phone size={14} /> +91 98943 32446
+                         </a>
+                         <a href="mailto:arjun_nivi@yahoo.com" className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400 hover:text-purple-500 transition-colors break-all">
+                            <Mail size={14} /> arjun_nivi@yahoo.com
+                         </a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
           </div>
-        </div>
 
-        {/* Contact Card 2 */}
-        {/* CHANGE 3: Added 'flex-1' to make it stretch */}
-        <div className="flex-1 p-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl border border-purple-100 dark:border-purple-800/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div className="w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center shrink-0 mb-4">
-            <Users size={24} className="text-purple-600 dark:text-purple-400" />
-          </div>
-          <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-2">Prof. T. V. Arjunan</h4>
-          <p className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-4">Co-Principal Investigator & Convenor</p>
-          <div className="space-y-2 text-sm">
-            <a href="tel:+919894332446" className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-              <Phone size={14} /> +91 98943 32446
-            </a>
-            <a href="mailto:arjun_nivi@yahoo.com" className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-              <Mail size={14} /> arjun_nivi@yahoo.com
-            </a>
-          </div>
         </div>
-      </div>
-
-      {/* Right Column - Venue Card */}
-      {/* CHANGE 4: Added 'h-full' to ensure the wrapper respects grid height */}
-      <div className="h-full p-6 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-2xl border border-amber-100 dark:border-amber-800/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col">
-        <div className="w-14 h-14 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center shrink-0 mb-4">
-          <MapPin size={24} className="text-amber-600 dark:text-amber-400" />
-        </div>
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100/50 dark:bg-amber-900/30 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-widest mb-4 text-amber-700 dark:text-amber-300 w-fit">
-          <MapPin size={12} /> Event Venue
-        </div>
-        <h3 className="text-2xl font-black text-slate-900 dark:text-white leading-tight mb-3">
-          Guru Ghasidas<br />Vishwavidyalaya
-        </h3>
-        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          (A Central University)<br />
-          Koni, Bilaspur, (C.G.)<br />
-          India – 495009
-        </p>
-
-        {/* Map Preview */}
-        <div className="flex-1 rounded-xl overflow-hidden border border-amber-200 dark:border-amber-800/50 shadow-inner min-h-[250px]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4379.287901079577!2d82.1377255!3d22.1287782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a280befca3a0d2f%3A0x580096dff518fe20!2sGuru%20Ghasidas%20Vishwavidyalaya%2C%20Bilaspur!5e1!3m2!1sen!2snp!4v1767084848822!5m2!1sen!2snp"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="grayscale hover:grayscale-0 transition-all duration-300"
-          />
-        </div>
-
-        <div className="mt-4 pt-4 border-t border-saffron-200 dark:border-saffron-800/50">
-          <a
-            href="https://maps.app.goo.gl/Hm6TNtrypAQbWpEV8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-bold text-saffron-600 dark:text-saffron-400 hover:gap-3 transition-all"
-          >
-            Get Directions <span>→</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
 
 

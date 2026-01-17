@@ -388,6 +388,10 @@ const Submission: React.FC = () => {
                         </div>
                     </div>
                 </div>
+                {/* Footer-lite note */}
+          <p className="mt-8 text-center text-xs text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em]">
+            NHIDE 2026 • Innovation • Design • Entrepreneurship
+          </p>
             </section>
 
         </div>

@@ -188,7 +188,7 @@ const Timeline: React.FC = () => {
           </div>
 
           <a
-            href="/schedule_nhide_2026.jpg"
+            href="/schedule_nhide_2026.docx"
             download
             className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-lg rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 overflow-hidden"
           >

@@ -412,29 +412,29 @@ export const SPONSORS = [
     // logo: "/images/sponsors/Guru_Ghasidas_University_Insignia.jpeg",
     link: "https://www.ggu.ac.in/"
   },
-  {
-    name: "AICTE",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/All_India_Council_for_Technical_Education_logo.png/316px-All_India_Council_for_Technical_Education_logo.png",
-    link: "https://www.aicte-india.org/"
-  },
-  {
-    name: "Digital India",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Digital_India_logo.svg/330px-Digital_India_logo.svg.png",
-    link: "https://www.digitalindia.gov.in/"
-  },
-  {
-    name: "Startup India",
-    logo: "https://vectorseek.com/wp-content/uploads/2023/08/Startup-India-Hub-Logo-Vector.svg-.png",
-    link: "https://www.startupindia.gov.in/"
-  },
-  {
-    name: "HCL",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/HCL_Technologies_logo.svg/1200px-HCL_Technologies_logo.svg.png?20100214041014", // Placeholder - add actual logo
-    link: "https://www.hcltech.com/"
-  },
-  {
-    name: "NTPC",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/NTPC_Logo.svg/120px-NTPC_Logo.svg.png?20100830204023", // Placeholder - add actual logo
-    link: "https://www.ntpc.co.in/"
-  },
+  // {
+  //   name: "AICTE",
+  //   logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/All_India_Council_for_Technical_Education_logo.png/316px-All_India_Council_for_Technical_Education_logo.png",
+  //   link: "https://www.aicte-india.org/"
+  // },
+  // {
+  //   name: "Digital India",
+  //   logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Digital_India_logo.svg/330px-Digital_India_logo.svg.png",
+  //   link: "https://www.digitalindia.gov.in/"
+  // },
+  // {
+  //   name: "Startup India",
+  //   logo: "https://vectorseek.com/wp-content/uploads/2023/08/Startup-India-Hub-Logo-Vector.svg-.png",
+  //   link: "https://www.startupindia.gov.in/"
+  // },
+  // {
+  //   name: "HCL",
+  //   logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/HCL_Technologies_logo.svg/1200px-HCL_Technologies_logo.svg.png?20100214041014", // Placeholder - add actual logo
+  //   link: "https://www.hcltech.com/"
+  // },
+  // {
+  //   name: "NTPC",
+  //   logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/NTPC_Logo.svg/120px-NTPC_Logo.svg.png?20100830204023", // Placeholder - add actual logo
+  //   link: "https://www.ntpc.co.in/"
+  // },
 ];

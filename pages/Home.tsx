@@ -1041,7 +1041,7 @@ const Home: React.FC = () => {
               <Handshake size={20} />
             </div>
             <h2 className="text-sm font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.3em]">
-              Supported By
+              Sponsored By
             </h2>
           </div>
 
