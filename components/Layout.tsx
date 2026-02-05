@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa"
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X, Moon, Sun, ChevronUp, Mail, MapPin, ExternalLink } from 'lucide-react';
 import { NAV_LINKS, CONTACT_EMAIL } from '../constants';
+
 
 export const Layout: React.FC = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  
   
   // 1. NEW STATE: Manage the Legal Modal (Privacy/Terms)
   const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'privacy' | 'terms' }>({
@@ -204,13 +207,25 @@ export const Layout: React.FC = () => {
                 Empowering the next generation of innovators at Guru Ghasidas Vishwavidyalaya.
               </p>
               <div className="flex gap-4">
-                 {/* Social Placeholders */}
-                 {['twitter', 'linkedin', 'github'].map(icon => (
-                    <a key={icon} href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
-                       <ExternalLink size={14} />
-                    </a>
-                 ))}
-              </div>
+  {[
+    // { name: 'twitter', url: '#', icon: <FaTwitter size={14} /> },
+    { name: 'linkedin', url: '#', icon: <FaLinkedin size={14} /> },
+    // { name: 'github', url: '#', icon: <FaGithub size={14} /> },
+    { name: 'instagram', url: 'https://www.instagram.com/cbde.ggv?igsh=YnlhdGY5NngzMW5v', icon: <FaInstagram size={14} /> }
+  ].map(s => (
+    <a
+      key={s.name}
+      href={s.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"
+      aria-label={s.name}
+    >
+      {s.icon}
+    </a>
+  ))}
+</div>
+
             </div>
 
             {/* Quick Links */}
