@@ -383,15 +383,15 @@ const Home: React.FC = () => {
     {/* Header */}
     <div className="text-center mb-16">
       <span className="text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest text-xs">
-        Not Just A Hackathon
+        Not Another Typical Hackathon
       </span>
 
       <h2 className="text-3xl md:text-5xl font-black mt-2 mb-6 text-slate-900 dark:text-white">
-        Beyond The <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Code</span>
+        Beyond Just <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Coding</span>
       </h2>
 
       <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">
-        NHIDE isn't about who writes the fastest algorithm. It's about who builds the most viable future, in any domain.
+        NHIDE isn't about who writes the fastest algorithm. It's about who builds the most viable future, in any domain possible.
       </p>
     </div>
 
@@ -552,7 +552,7 @@ const Home: React.FC = () => {
                 { 
                   step: "04", 
                   title: "Grand Finale", 
-                  desc: "48-Hour Hackathon at GGV. Code, Pitch, Win.", 
+                  desc: "48-Hour Hackathon at GGV. Build, Pitch, Win.", 
                   icon: <Trophy size={20} />,
                   color: "text-saffron-500",
                   bg: "bg-orange-50 dark:bg-orange-900/20",
