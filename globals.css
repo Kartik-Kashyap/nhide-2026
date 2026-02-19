@@ -208,3 +208,16 @@ html {
 @keyframes shimmer {
   100% { transform: translateX(100%); }
 }
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.animate-shine {
+  animation: shine 1.2s ease-in-out;
+}

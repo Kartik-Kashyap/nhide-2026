@@ -1053,41 +1053,31 @@ const Home: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={sponsor.name}
-                className="group relative flex items-center justify-center w-40 h-24 p-4 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 shadow-sm hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300"
+                // FIXED: bg-white for both modes. Added a neon blue shadow glow for dark mode so it looks like a backlit panel.
+                className="group relative flex items-center justify-center w-40 h-24 p-4 bg-white rounded-2xl border border-slate-200 dark:border-slate-700/60 hover:border-blue-500/50 dark:hover:border-blue-400 shadow-sm hover:shadow-xl dark:shadow-[0_4px_15px_rgba(255,255,255,0.03)] hover:-translate-y-1 hover:scale-105 dark:hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all duration-300 overflow-hidden"
               >
-                {/* Logo with Grayscale-to-Color effect */}
+                {/* Logo: Mix-blend-multiply eliminates any off-white JPEG edges so the logo melts into the pure white card */}
                 <img
                   src={sponsor.logo}
                   alt={sponsor.name}
-                  className="max-w-full max-h-full object-contain
-  opacity-60 grayscale
-  group-hover:grayscale-0 group-hover:opacity-100
-  transition-all duration-300
-  
-  dark:mix-blend-multiply          {/* ← change to this */}
-  dark:brightness-90               {/* tune 75–110; 90 is often sweet spot */}
-  dark:group-hover:brightness-100"
+                  className="max-w-full max-h-full object-contain mix-blend-multiply opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 relative z-10"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     const parent = target.parentElement;
                     if (parent) {
-                      parent.innerHTML = `<div class="text-xs text-center text-slate-500 font-bold group-hover:text-blue-600 transition-colors">${sponsor.name}</div>`;
+                      parent.innerHTML = `<div class="text-xs text-center text-slate-500 font-bold group-hover:text-blue-600 transition-colors relative z-10">${sponsor.name}</div>`;
                     }
                   }}
                 />
 
-                {/* Optional: Glossy Shine Effect on Hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                {/* THE COOL EFFECT: An animated, angled glass sweep that slides across the card on hover */}
+                <div className="absolute inset-0 w-full h-full pointer-events-none">
+                  <div className="absolute top-0 -left-[150%] w-1/2 h-full bg-gradient-to-r from-transparent via-blue-400/15 to-transparent skew-x-[30deg] group-hover:left-[200%] transition-all duration-1000 ease-in-out"></div>
+                </div>
               </a>
             ))}
           </div>
-
-          {/* <div className="mt-12 text-center">
-             <p className="text-xs text-slate-400 dark:text-slate-600">
-                Want to support innovation? <a href={`mailto:${CONTACT_EMAIL}`} className="text-blue-600 dark:text-blue-400 hover:underline">Become a Sponsor</a>
-             </p>
-          </div> */}
         </div>
       </section>
 
