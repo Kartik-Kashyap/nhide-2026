@@ -1059,7 +1059,14 @@ const Home: React.FC = () => {
                 <img
                   src={sponsor.logo}
                   alt={sponsor.name}
-                  className="max-w-full max-h-full object-contain opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 dark:brightness-200 dark:group-hover:brightness-100"
+                  className="max-w-full max-h-full object-contain
+  opacity-60 grayscale
+  group-hover:grayscale-0 group-hover:opacity-100
+  transition-all duration-300
+  
+  dark:mix-blend-multiply          {/* ← change to this */}
+  dark:brightness-90               {/* tune 75–110; 90 is often sweet spot */}
+  dark:group-hover:brightness-100"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';

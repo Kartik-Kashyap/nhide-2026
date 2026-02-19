@@ -110,28 +110,28 @@ export const TIMELINE: EventItem[] = [
   {
     id: 'e2',
     title: 'Proposal Submission Deadline',
-    date: '23 Feb 2026',
+    date: '01 Mar 2026',
     description: 'Last date to submit your initial innovation proposals for screening and selection.',
     isCompleted: false
   },
   {
     id: 'e3',
     title: 'Selection Announcement',
-    date: '25 Feb 2026',
+    date: '04 Mar 2026',
     description: 'Results of the screening process. Selected teams will be notified for the final registration phase.',
     isCompleted: false
   },
   {
     id: 'e4',
     title: 'Selected Participant Registration',
-    date: '25 Feb 2026',
+    date: '04 Mar 2026',
     description: 'Registration portal opens exclusively for teams whose proposals were successfully shortlisted.',
     isCompleted: false
   },
   {
     id: 'e5',
     title: 'Final Registration Deadline',
-    date: '01 Mar 2026',
+    date: '10 Mar 2026',
     description: 'Last date for selected teams to confirm their participation and finalize team details.',
     isCompleted: false
   },
@@ -402,16 +402,26 @@ export const SPONSORS = [
   {
     name: "Ministry of Education",
     // logo: "https://scetngp.com/wp-content/uploads/2023/04/logonew1.jpg", 
-    logo: "/images/sponsors/moe-modified3.png",
+    logo: "/images/sponsors/moe.jpeg",
     link: "https://www.education.gov.in/"
   },
   {
     name: "Guru Ghasidas Vishwavidyalaya",
     // logo: "https://placehold.co/200x80/0f172a/white?text=GGV+Bilaspur", 
-    logo: "https://www.ggu.ac.in/media/BasePageImage/GGV-logo.png",
-    // logo: "/images/sponsors/Guru_Ghasidas_University_Insignia.jpeg",
+    // logo: "https://www.ggu.ac.in/media/BasePageImage/GGV-logo.png",
+    logo: "/images/sponsors/ggv.jpeg",
     link: "https://www.ggu.ac.in/"
   },
+  {
+    name: "The Council of Scientific and Industrial Research",
+    logo: "/images/sponsors/csir.jpeg",
+    link: "https://www.csir.res.in/"
+  },
+  {
+    name: "NTPC GE Power Services Pvt. Ltd.",
+    logo: "/images/sponsors/ngsl.jpeg",
+    link: "https://ngsl.co.in/"
+  }
   // {
   //   name: "AICTE",
   //   logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/All_India_Council_for_Technical_Education_logo.png/316px-All_India_Council_for_Technical_Education_logo.png",
