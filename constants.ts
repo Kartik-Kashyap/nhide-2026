@@ -110,28 +110,28 @@ export const TIMELINE: EventItem[] = [
   {
     id: 'e2',
     title: 'Proposal Submission Deadline',
-    date: '01 Mar 2026',
+    date: '08 Mar 2026',
     description: 'Last date to submit your initial innovation proposals for screening and selection.',
     isCompleted: false
   },
   {
     id: 'e3',
     title: 'Selection Announcement',
-    date: '04 Mar 2026',
+    date: '09 Mar 2026',
     description: 'Results of the screening process. Selected teams will be notified for the final registration phase.',
     isCompleted: false
   },
   {
     id: 'e4',
     title: 'Selected Participant Registration',
-    date: '04 Mar 2026',
+    date: '09 Mar 2026',
     description: 'Registration portal opens exclusively for teams whose proposals were successfully shortlisted.',
     isCompleted: false
   },
   {
     id: 'e5',
     title: 'Final Registration Deadline',
-    date: '10 Mar 2026',
+    date: '15 Mar 2026',
     description: 'Last date for selected teams to confirm their participation and finalize team details.',
     isCompleted: false
   },
