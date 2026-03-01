@@ -107,7 +107,7 @@ const Submission: React.FC = () => {
 
                                     <li>Clearly describe the problem statement, solution, methodology, and innovation aspects.</li>
 
-                                    <li>Submission Deadline: <span className="text-red-500 font-bold">23 February 2026</span></li>
+                                    <li>Submission Deadline: <span className="text-red-500 font-bold">8 March 2026</span></li>
 
                                 </ul>
 
@@ -135,7 +135,7 @@ const Submission: React.FC = () => {
 
                                     <li>Evaluated by an expert review committee based on innovation, feasibility, and impact.</li>
 
-                                    <li>Results announced on or before <span className="font-bold">25 February 2026</span>.</li>
+                                    <li>Results announced on or before <span className="font-bold">9 March 2026</span>.</li>
 
                                     <li>Selected teams informed via email and website.</li>
 
@@ -167,7 +167,7 @@ const Submission: React.FC = () => {
 
                                     <li>Registration link shared via email to selected teams.</li>
 
-                                    <li>Deadline: <span className="text-red-500 font-bold">1 March 2026</span></li>
+                                    <li>Deadline: <span className="text-red-500 font-bold">15 March 2026</span></li>
 
                                     <li>Accommodation details to be filled during this process.</li>
 
