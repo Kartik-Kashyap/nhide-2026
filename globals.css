@@ -221,3 +221,45 @@ html {
 .animate-shine {
   animation: shine 1.2s ease-in-out;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Default light mode for Chrome/Edge */
+  ::-webkit-scrollbar {
+    width: 6px;          /* thin scrollbar */
+    height: 6px;         /* for horizontal if needed */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;  /* slate-100-ish light track */
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #94a3b8;  /* slate-400 thumb */
+    border-radius: 9999px;
+    border: 1px solid #e2e8f0;  /* subtle border so it doesn't look flat */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;  /* slate-500 on hover */
+  }
+
+  /* Dark mode overrides – applied when .dark is on html/body */
+  .dark {
+    ::-webkit-scrollbar-track {
+      background: #0f172a;  /* slate-950 deep dark track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #475569;  /* slate-600 thumb */
+      border: 1px solid #1e293b;  /* slate-800 border */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;  /* slate-500 hover for feedback */
+    }
+  }
+}

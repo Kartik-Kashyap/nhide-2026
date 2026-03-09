@@ -98,7 +98,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
 
           {/* LOGO STRIP (Glassmorphism) */}
-          <div className="flex justify-center mb-16 animate-fade-in-up">
+          <div className="flex justify-center mb-10 animate-fade-in-up">
             <div className="inline-flex flex-wrap justify-center items-center gap-6 md:gap-12 p-4 md:p-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-white/60 dark:border-slate-800 rounded-2xl shadow-xl">
               {/* GGV Logo */}
               <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl p-2 shadow-sm hover:scale-105 transition-transform duration-300">
@@ -115,13 +115,24 @@ const Home: React.FC = () => {
 
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6 animate-fade-in-up backdrop-blur-sm bg-white/50 dark:bg-black/20">
+            {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6 animate-fade-in-up backdrop-blur-sm bg-white/50 dark:bg-black/20">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
               Proposals Open
-            </div>
+            </div> */}
+
+            <Link 
+              to="/shortlisted" 
+              className="group inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-bold uppercase tracking-widest mb-8 animate-fade-in-up shadow-lg shadow-emerald-500/30 hover:scale-105 transition-all"
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+              </span>
+              Phase 1 Results Announced! View Shortlisted Teams <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white mb-8 leading-[1.1] tracking-tight drop-shadow-sm">
               NHIDE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">2026</span>

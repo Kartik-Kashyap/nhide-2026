@@ -13,6 +13,7 @@ export const NAV_LINKS: NavItem[] = [
   { label: 'Themes', path: '/themes' },
   { label: 'Timeline', path: '/timeline' },
   { label: 'Submission', path: '/submission' },
+  { label: "Results", path: "/shortlisted" },
 ];
 
 export const THEMES: Theme[] = [

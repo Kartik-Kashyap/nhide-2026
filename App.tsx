@@ -6,6 +6,7 @@ import About from './pages/About';
 import Themes from './pages/Themes';
 import Timeline from './pages/Timeline';
 import Submission from './pages/Submission';
+import Shortlisted from './pages/Shortlisted';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Route path="themes" element={<Themes />} />
           <Route path="timeline" element={<Timeline />} />
           <Route path="submission" element={<Submission />} />
+          <Route path="/shortlisted" element={<Shortlisted />} />
         </Route>
       </Routes>
     </HashRouter>
