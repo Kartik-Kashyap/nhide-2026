@@ -123,7 +123,7 @@ const Home: React.FC = () => {
               Proposals Open
             </div> */}
 
-            <Link 
+            {/* <Link 
               to="/shortlisted" 
               className="group inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-bold uppercase tracking-widest mb-8 animate-fade-in-up shadow-lg shadow-emerald-500/30 hover:scale-105 transition-all"
             >
@@ -132,6 +132,17 @@ const Home: React.FC = () => {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
               </span>
               Phase 1 Results Announced! View Shortlisted Teams <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link> */}
+
+            <Link 
+              to="/shortlisted" 
+              className="group inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-bold uppercase tracking-widest mb-8 animate-fade-in-up shadow-lg shadow-emerald-500/30 hover:scale-105 transition-transform"
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+              </span>
+              Final Teams & Accommodation Out! View Logistics <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white mb-8 leading-[1.1] tracking-tight drop-shadow-sm">
