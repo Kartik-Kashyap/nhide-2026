@@ -2626,7 +2626,7 @@ const Shortlisted: React.FC = () => {
              </p>
              <div className="flex flex-wrap justify-center md:justify-start gap-4">
                <a href="tel:918608350" className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-blue-400 shadow-sm transition-all">
-                 Nikhil: 918608350
+                 Nikhil: 9118608350
                </a>
                <a href="tel:8617762316" className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-blue-400 shadow-sm transition-all">
                  Md Noman: 8617762316
