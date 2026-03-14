@@ -132,7 +132,7 @@ export const TIMELINE: EventItem[] = [
   {
     id: 'e5',
     title: 'Final Registration Deadline',
-    date: '15 Mar 2026',
+    date: '10 Mar 2026',
     description: 'Last date for selected teams to confirm their participation and finalize team details.',
     isCompleted: false
   },

@@ -2625,7 +2625,7 @@ const Shortlisted: React.FC = () => {
                If you are facing issues reaching your hotel or finding the campus guest house, call our logistics coordinators:
              </p>
              <div className="flex flex-wrap justify-center md:justify-start gap-4">
-               <a href="tel:918608350" className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-blue-400 shadow-sm transition-all">
+               <a href="tel:9118608350" className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-blue-400 shadow-sm transition-all">
                  Nikhil: 9118608350
                </a>
                <a href="tel:8617762316" className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-blue-400 shadow-sm transition-all">
