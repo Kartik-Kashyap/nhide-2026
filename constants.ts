@@ -152,21 +152,21 @@ export const PRIZES: Prize[] = [
     id: 'p1',
     rank: '1st Place',
     amount: '₹50,000',
-    perks: ['Trophy', 'Certificate of Excellence', 'Networking Opportunities'],
+    perks: ['Certificate', 'Financial Support Possibility' , 'Networking Opportunities'],
     iconName: 'Trophy'
   },
   {
     id: 'p2',
     rank: '2nd Place',
     amount: '₹30,000',
-    perks: ['Trophy', 'Certificate of Excellence', 'Mentorship'],
+    perks: ['Certificate', 'Mentorship'],
     iconName: 'Award'
   },
   {
     id: 'p3',
     rank: '3rd Place',
     amount: '₹20,000',
-    perks: ['Trophy', 'Certificate of Excellence', 'Goodies'],
+    perks: ['Certificate', 'Goodies'],
     iconName: 'Medal'
   }
 ];
