@@ -2439,7 +2439,7 @@
 
 
 import React from 'react';
-import { Trophy, Download, AlertCircle, MapPin, Phone, Building, Home as HomeIcon, FileText, CheckCircle, Info } from 'lucide-react';
+import { Trophy, Download, AlertCircle, MapPin, Phone, Building, Home as HomeIcon, FileText, CheckCircle, Info, Presentation, Target, Lightbulb, Zap, Scale, Briefcase, Users, Timer } from 'lucide-react';
 
 // Extracted from your provided image
 const BUDGET_HOTELS = [
@@ -2453,14 +2453,135 @@ const BUDGET_HOTELS = [
 const Shortlisted: React.FC = () => {
   return (
     <div className="animate-fade-in pt-12 pb-24">
+
       
-      {/* --- HERO SECTION --- */}
-      <section className="container mx-auto px-4 md:px-6 mb-16 text-center">
+<section className="container mx-auto px-4 md:px-6 mb-16 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-bold uppercase tracking-widest mb-6">
           <CheckCircle size={16} /> Final Phase
         </div>
         <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
-          Participant <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Logistics</span>
+          Pitching <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Guidelines</span>
+        </h1>
+        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          Hackathon Pitching-Evaluation Guidelines is provided for the finalist teams to prepare for the final pitching round. Please read through the guidelines carefully to understand the expectations and criteria for evaluation.
+        </p>
+      </section>
+      {/* --- NEW SECTION: PITCHING & EVALUATION GUIDELINES --- */}
+      <section className="bg-slate-50 dark:bg-[#0B0F19] py-24 border-y border-slate-200 dark:border-slate-800 mb-24 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
+          
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                 <div className="h-8 w-1 bg-blue-500 rounded-full"></div>
+                 <h2 className="text-3xl font-black text-slate-900 dark:text-white">Pitching Protocol</h2>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 max-w-2xl">
+                Evaluation will be conducted in two rounds: Preliminary (19.03.2026) and Final (20.03.2026).
+              </p>
+            </div>
+            <a 
+              href="/NHIDE_Pitching_Guidelines.pdf" 
+              download
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold rounded-xl shadow-sm transition-all hover:border-blue-500 hover:shadow-md shrink-0"
+            >
+              <Download size={18} /> Official Guidelines PDF
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* The Timer / Rules Card */}
+            <div className="lg:col-span-1 space-y-6">
+              <div className="bg-white dark:bg-slate-900 border-2 border-blue-500 rounded-3xl p-8 shadow-xl shadow-blue-500/10 relative overflow-hidden">
+                <div className="absolute -right-4 -top-4 text-blue-500/10 rotate-12">
+                  <Timer size={120} />
+                </div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-black text-slate-900 dark:text-white mb-6 uppercase tracking-widest flex items-center gap-2">
+                    <Timer className="text-blue-500" /> Time Limit
+                  </h3>
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-5xl font-black text-blue-600 dark:text-blue-400">10</span>
+                    <span className="text-xl font-bold text-slate-500">Minutes Max</span>
+                  </div>
+                  <div className="space-y-3 mt-6 border-t border-slate-100 dark:border-slate-800 pt-6">
+                    <div className="flex justify-between items-center text-sm font-bold">
+                      <span className="text-slate-600 dark:text-slate-300">Pitch / Presentation</span>
+                      <span className="text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">7 Mins</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm font-bold">
+                      <span className="text-slate-600 dark:text-slate-300">Q&A with Judges</span>
+                      <span className="text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/30 px-3 py-1 rounded-full">3 Mins</span>
+                    </div>
+                  </div>
+                  <p className="mt-6 text-xs font-semibold text-red-500 bg-red-50 dark:bg-red-900/20 p-3 rounded-lg border border-red-100 dark:border-red-900/50">
+                    *Exceeding the time limit may lead to a reduction in marks. Teams must be ready 30 mins prior.
+                  </p>
+                </div>
+              </div>
+
+              {/* Important Instructions */}
+              <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800/30 rounded-3xl p-6">
+                <h4 className="font-bold text-amber-800 dark:text-amber-400 mb-4 flex items-center gap-2">
+                  <AlertCircle size={18} /> Key Instructions
+                </h4>
+                <ul className="space-y-3 text-xs text-slate-700 dark:text-slate-300">
+                  <li className="flex gap-2"><span className="text-amber-500">•</span> Maximum 20 slides (PPT/PDF).</li>
+                  <li className="flex gap-2"><span className="text-amber-500">•</span> One member leads the pitch; others support during Q&A.</li>
+                  <li className="flex gap-2"><span className="text-amber-500">•</span> Plagiarism leads to instant disqualification.</li>
+                  <li className="flex gap-2"><span className="text-amber-500">•</span> Judges' decisions are final.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Slide Deck Format Grid */}
+            <div className="lg:col-span-2">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                <Presentation className="text-purple-500" /> Required Slide Deck Format
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { title: "Problem Statement", icon: <Target size={18} />, desc: "Clear description of the problem, affected stakeholders, and its significance." },
+                  { title: "Proposed Solution", icon: <Lightbulb size={18} />, desc: "Product overview, innovation aspect, key value proposition, and uniqueness." },
+                  { title: "Product / Tech", icon: <Zap size={18} />, desc: "Prototype status, key technical features, and intellectual property potential." },
+                  { title: "Market Opportunity", icon: <Scale size={18} />, desc: "Target customers, market size, competition, and go-to-market strategy." },
+                  { title: "Business Model", icon: <Briefcase size={18} />, desc: "Revenue generation strategy, pricing model, and scalability potential." },
+                  { title: "Team Strength", icon: <Users size={18} />, desc: "Team expertise, roles, and why you are capable of executing the idea." },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl hover:border-purple-500/30 transition-colors shadow-sm">
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                      <span className="text-purple-500">{item.icon}</span> {item.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+                {/* Full width item for Impact */}
+                <div className="md:col-span-2 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 border border-blue-100 dark:border-blue-800/30 p-5 rounded-2xl shadow-sm">
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                    <span className="text-blue-500"><Trophy size={18} /></span> Impact & Vision
+                  </h4>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Social/environmental impact, long-term vision, sustainability, financial planning, and funding needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+      {/* --- HERO SECTION --- */}
+      <section className="container mx-auto px-4 md:px-6 mb-16 text-center">
+        {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-bold uppercase tracking-widest mb-6">
+          <CheckCircle size={16} /> Final Phase
+        </div> */}
+        <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+          Participant <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-800">Logistics</span>
         </h1>
         <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
           Final registrations are complete! Please check the final participating teams and review your accommodation details for your arrival at GGV.
