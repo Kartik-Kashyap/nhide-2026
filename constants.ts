@@ -380,21 +380,21 @@ export const SPEAKERS: Speaker[] = [
 // Venture Capitalists / Investors
 export const VENTURE_CAPITALISTS: VentureCapitalist[] = [
   {
-    name: 'VC Firm Name 1',
-    designation: 'Partner / Managing Director',
-    organization: 'Investment Firm Name',
-    location: 'Location',
-    logo: '/images/vc/vc-logo-1.png', // Placeholder path
-    link: 'https://example.com'
+    name: 'Chandran Krishnan',
+    designation: 'Founder, MD & CEO ',
+    organization: 'Campus Angels Network',
+    location: 'Chennai, Tamil Nadu',
+    logo: '/images/vc/angels.jpg', // Placeholder path
+    link: 'https://www.thecampusangels.com/'
   },
-  {
-    name: 'VC Firm Name 2',
-    designation: 'Partner / Managing Director',
-    organization: 'Investment Firm Name',
-    location: 'Location',
-    logo: '/images/vc/vc-logo-2.png', // Placeholder path
-    link: 'https://example.com'
-  },
+  // {
+  //   name: 'VC Firm Name 2',
+  //   designation: 'Partner / Managing Director',
+  //   organization: 'Investment Firm Name',
+  //   location: 'Location',
+  //   logo: '/images/vc/vc-logo-2.png', // Placeholder path
+  //   link: 'https://example.com'
+  // },
   // Add more VC firms as needed
 ];
 

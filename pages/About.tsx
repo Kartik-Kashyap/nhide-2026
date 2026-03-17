@@ -397,7 +397,7 @@ const About: React.FC = () => {
                 <div className="px-8 pb-8">
                   <div className="relative -mt-12 w-24 h-24 rounded-2xl overflow-hidden border-4 border-white dark:border-slate-900 shadow-lg mb-6 group-hover:scale-105 transition-transform bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
                     {vc.logo ? (
-                      <img src={vc.logo} alt={vc.organization} className="w-full h-full object-contain p-4" />
+                      <img src={vc.logo} alt={vc.organization} className="w-full h-full object-cover" />
                     ) : (
                       <Users className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                     )}
