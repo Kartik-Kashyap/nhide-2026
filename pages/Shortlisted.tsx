@@ -2501,11 +2501,11 @@ const BUDGET_HOTELS = [
 const VENUES = [
   { name: "Mech Engg. G08", domains: ["Advanced Material & Manufacturing", "Emerging AgTech", "Aerospace"], chairs: ["Mr. B.R. Naresh", "Dr. Agarwal"] },
   { name: "Mech Engg. G10", domains: ["Energy", "Environment", "Climate and Sustainability"], chairs: ["Mr. Ajit Ekbote", "Mr. Sachin Gupta"] },
-  { name: "Auditorium - Hall 2", domains: ["Artificial Intelligence", "IoT", "Machine Learning"], chairs: ["Mr. Vikas Shrivastav", "Mr. Nandan Kr. Singh"] },
   { name: "Auditorium - Hall 1", domains: ["Artificial Intelligence", "Applied Computer Science"], chairs: ["Mr. Saurav Sao", "Dr. Shanu K. Rakesh"] },
+    { name: "Auditorium - Hall 2", domains: ["Artificial Intelligence", "IoT", "Machine Learning"], chairs: ["Mr. Vikas Shrivastav", "Mr. Nandan Kr. Singh"] },
+    { name: "ECE CR-4", domains: ["Health and Medical Technologies"], chairs: ["Mr. Rajdeep Dewangan", "Dr. Mahavir Hiralal Ghante"] },
   { name: "ECE - CR-7", domains: ["Health & Medical Tech", "Digital Communication", "Quantum Science", "Cyber Security", "Semiconductor Mfg."], chairs: ["Ms. Namrata Tatiya Jain", "Mr. Ashish Khare"] },
-  { name: "Civil Engg. - G-19", domains: ["Social Welfare and Service", "Education Technology"], chairs: ["Dr. Mukherjee AB", "Mr. Siddharth Bhatter"] },
-  { name: "ECE CR-4", domains: ["Health and Medical Technologies"], chairs: ["Mr. Rajdeep Dewangan", "Dr. Mahavir Hiralal Ghante"] },
+    { name: "Civil Engg. - G-19", domains: ["Social Welfare and Service", "Education Technology"], chairs: ["Dr. Mukherjee AB", "Mr. Siddharth Bhatter"] },
   { name: "Civil Engg F-12", domains: ["Social Welfare & Service", "Education Tech", "Automation and Safety"], chairs: ["Mr. Agranshu Dwivedi", "Dr. Vivekananda Mandal"] }
 ];
 
