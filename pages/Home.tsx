@@ -146,7 +146,7 @@ const Home: React.FC = () => {
             </Link> */}
 
 
-<Link 
+            <Link 
               to="/shortlisted" 
               className="group inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-bold uppercase tracking-widest mb-8 animate-fade-in-up shadow-lg shadow-emerald-500/30 hover:scale-105 transition-transform"
             >
@@ -154,8 +154,10 @@ const Home: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
               </span>
-              Hackathon Pitching-Evaluation Guidelines is out! View it here <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              Itinerary + Venue Matrix + Pitching Guidelines are out! View it here <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
+
+            
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white mb-8 leading-[1.1] tracking-tight drop-shadow-sm">
               NHIDE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">2026</span>

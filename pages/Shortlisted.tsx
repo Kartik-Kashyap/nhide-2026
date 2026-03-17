@@ -2439,7 +2439,55 @@
 
 
 import React from 'react';
-import { Trophy, Download, AlertCircle, MapPin, Phone, Building, Home as HomeIcon, FileText, CheckCircle, Info, Presentation, Target, Lightbulb, Zap, Scale, Briefcase, Users, Timer } from 'lucide-react';
+import { Trophy, Download, AlertCircle, MapPin, Phone, Building, Home as HomeIcon, FileText, CheckCircle, Info, Presentation, Target, Lightbulb, Zap, Scale, Briefcase, Users, Timer, Coffee, Clock, Star, Mic, Calendar } from 'lucide-react';
+import { useState } from 'react';
+
+// ScheduleRow Component
+interface ScheduleRowProps {
+  time: string;
+  title: string;
+  venue: string;
+  icon: React.ReactNode;
+  subText?: string;
+}
+
+// const ScheduleRow: React.FC<ScheduleRowProps> = ({ time, title, venue, icon, subText }) => (
+//   <div className="relative pl-6 md:pl-0">
+//     <div className="md:grid md:grid-cols-12 gap-6 items-start">
+//       <div className="md:col-span-3 text-sm font-black text-blue-600 dark:text-blue-400 mb-2 md:mb-0 md:text-right pt-1.5 flex items-center md:justify-end gap-2">
+//         <Clock size={14} className="hidden md:block" /> {time}
+//       </div>
+//       <div className="md:col-span-9 bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800/30 p-6 rounded-2xl">
+//         <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+//           <span className="text-blue-500">{icon}</span> {title}
+//         </h3>
+//         <p className="text-sm font-medium text-slate-500 mb-1 flex items-center gap-2">
+//           <MapPin size={14} /> {venue}
+//         </p>
+//         {subText && <p className="text-xs text-slate-500 italic">{subText}</p>}
+//       </div>
+//     </div>
+//   </div>
+// );
+
+// Internal Sub-component for clean Timeline Rows
+const ScheduleRow: React.FC<{ time: string, title: string, venue: string, subText?: string, icon?: React.ReactNode }> = ({ time, title, venue, subText, icon }) => (
+  <div className="relative pl-6 md:pl-0 group">
+    <div className="md:hidden absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500"></div>
+    <div className="md:grid md:grid-cols-12 gap-6 items-start">
+      <div className="md:col-span-3 text-sm font-black text-slate-500 dark:text-slate-400 mb-1 md:mb-0 md:text-right pt-1 flex items-center md:justify-end gap-2 group-hover:text-blue-500 transition-colors">
+        <Clock size={14} className="hidden md:block" /> {time}
+      </div>
+      <div className="md:col-span-9">
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-1">
+          {icon && <span className="text-slate-400">{icon}</span>} {title}
+        </h3>
+        {subText && <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-1">{subText}</p>}
+        <p className="text-sm text-slate-500 flex items-center gap-2"><MapPin size={14} /> {venue}</p>
+      </div>
+    </div>
+  </div>
+);
 
 // Extracted from your provided image
 const BUDGET_HOTELS = [
@@ -2450,12 +2498,235 @@ const BUDGET_HOTELS = [
   { name: "Jeet Continental", distance: "7 KM", contact: "9109136673", price: "Rs. 2000-4000", location: "Rabindranath Tagore Chowk, Bilaspur" },
 ];
 
+const VENUES = [
+  { name: "ME G08", domains: ["Advanced Material & Manufacturing", "Emerging AgTech", "Aerospace"], chairs: ["Mr. B.R. Naresh", "Dr. Agarwal"] },
+  { name: "Auditorium - ME G10", domains: ["Energy", "Environment", "Climate and Sustainability"], chairs: ["Mr. Ajit Ekbote", "Mr. Sachin Gupta"] },
+  { name: "Auditorium - Hall 2", domains: ["Artificial Intelligence", "IoT", "Machine Learning"], chairs: ["Mr. Vikas Shrivastav", "Mr. Nandan Kr. Singh"] },
+  { name: "Auditorium - Hall 1", domains: ["Artificial Intelligence", "Applied Computer Science"], chairs: ["Mr. Saurav Sao", "Dr. Shanu K. Rakesh"] },
+  { name: "ECE - CR-7", domains: ["Health & Medical Tech", "Digital Communication", "Quantum Science", "Cyber Security", "Semiconductor Mfg."], chairs: ["Ms. Namrata Tatiya Jain", "Mr. Ashish Khare"] },
+  { name: "Civil Engg. - G-19", domains: ["Social Welfare and Service", "Education Technology"], chairs: ["Dr. Mukherjee AB", "Mr. Siddharth Bhatter"] },
+  { name: "ECE CR-4", domains: ["Health and Medical Technologies"], chairs: ["Mr. Rajdeep Dewangan", "Dr. Mahavir Hiralal Ghante"] },
+  { name: "Civil Engg F-12", domains: ["Social Welfare & Service", "Education Tech", "Automation and Safety"], chairs: ["Mr. Agranshu Dwivedi", "Dr. Vivekananda Mandal"] }
+];
+
 const Shortlisted: React.FC = () => {
+  const [activeDay, setActiveDay] = useState<1 | 2>(1);
   return (
-    <div className="animate-fade-in pt-12 pb-24">
+    
+    // <div className="animate-fade-in pt-12 pb-24">
+
+      <div className="animate-fade-in pt-12 pb-24 font-sans selection:bg-blue-500 selection:text-white">
+      
+      {/* --- HERO SECTION --- */}
+      <section className="container mx-auto px-4 md:px-6 mb-16 text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-bold uppercase tracking-widest mb-6">
+          <Calendar size={16} /> Grand Finale Itinerary
+        </div>
+        <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+          Programme <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Schedule</span>
+        </h1>
+        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10">
+          Join us on March 19th & 20th for 48 hours of relentless innovation, expert panels, and intensive pitching sessions at GGV.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+           <a 
+             href="/NHIDE_2026_Schedule.pdf" 
+             download
+             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-xl shadow-lg transition-all hover:-translate-y-1"
+           >
+             <Download size={18} /> Official Schedule PDF
+           </a>
+           <a 
+             href="/NHIDE_2026_Venue_Allotment.pdf" 
+             download
+             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-white font-bold rounded-xl shadow-sm transition-all hover:-translate-y-1 hover:border-blue-500"
+           >
+             <MapPin size={18} /> Venue Allotments PDF
+           </a>
+        </div>
+      </section>
+
+      {/* --- THE ITINERARY --- */}
+      <section className="container mx-auto px-4 md:px-6 max-w-5xl mb-24">
+        
+        {/* Day Toggles */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex bg-slate-100 dark:bg-slate-900 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-800">
+            <button 
+              onClick={() => setActiveDay(1)}
+              className={`px-8 py-3 rounded-xl font-bold transition-all ${activeDay === 1 ? 'bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
+            >
+              Day 1: Thursday, 19 Mar
+            </button>
+            <button 
+              onClick={() => setActiveDay(2)}
+              className={`px-8 py-3 rounded-xl font-bold transition-all ${activeDay === 2 ? 'bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
+            >
+              Day 2: Friday, 20 Mar
+            </button>
+          </div>
+        </div>
+
+        {/* Timeline Flow */}
+        <div className="bg-white dark:bg-[#0B0F19] rounded-[2rem] border border-slate-200 dark:border-slate-800 p-6 md:p-12 shadow-sm relative overflow-hidden">
+          
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] pointer-events-none"></div>
+
+          {activeDay === 1 ? (
+             <div className="space-y-10 relative z-10">
+                <ScheduleRow time="9:00 AM onwards" title="Registration" venue="Auditorium" icon={<Users />} />
+                <ScheduleRow time="10:00 AM - 11:00 AM" title="Inaugural Session & Felicitations" venue="Auditorium" icon={<Star className="text-saffron-500" />} />
+                
+                {/* Panel Discussion Expander */}
+                <div className="relative pl-6 md:pl-0">
+                   <div className="md:grid md:grid-cols-12 gap-6 items-start">
+                     <div className="md:col-span-3 text-sm font-black text-blue-600 dark:text-blue-400 mb-2 md:mb-0 md:text-right pt-1.5 flex items-center md:justify-end gap-2">
+                       <Clock size={14} className="hidden md:block" /> 11:00 AM - 11:30 AM
+                     </div>
+                     <div className="md:col-span-9 bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800/30 p-6 rounded-2xl">
+                       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                         <Mic className="text-blue-500" size={20} /> Panel Discussion
+                       </h3>
+                       <p className="text-sm font-medium text-slate-500 mb-4 flex items-center gap-2">
+                         <MapPin size={14} /> Auditorium
+                       </p>
+                       <ul className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+                         <li><strong>Mr. Siddharth Bhatter</strong> - Founder & CEO, Karkhana Makerspace and Co-Founder of Karkhana Hub NCR, Delhi</li>
+                         <li><strong>Dr. Mukherjee AB</strong> - Former Director (Rtd), RPG, BARC, Mumbai</li>
+                         <li><strong>Mr. B.R. Naresh</strong> - Founder, CZAR Solutions, Pune</li>
+                         <li><strong>Mr. Ajit Ekbote</strong> - Sr. DGM (Rtd) & Vedic Mathematics Expert</li>
+                         <li><strong>Mr. Nandan Kr Singh</strong> - Director, Twinverse Technologies</li>
+                         <li><strong>Mr. Rajdeep Dewangan</strong> - Director, DFMEA Technosol (Topic: Design Thinking & Failure)</li>
+                         <li><strong>Mr. Saurav Sao</strong> - Head of Engg, Amloc / VP Engg @ Azentio Software</li>
+                       </ul>
+                     </div>
+                   </div>
+                </div>
+
+                <ScheduleRow time="11:30 AM - 12:00 PM" title="Hi-Tea & Networking" venue="Auditorium" icon={<Coffee className="text-amber-600" />} />
+                
+                <div className="relative pl-6 md:pl-0">
+                   <div className="md:grid md:grid-cols-12 gap-6 items-start">
+                     <div className="md:col-span-3 text-sm font-black text-purple-600 dark:text-purple-400 mb-2 md:mb-0 md:text-right pt-1.5">
+                       12:00 PM - 6:30 PM
+                     </div>
+                     <div className="md:col-span-9 bg-purple-50 dark:bg-purple-900/10 border border-purple-100 dark:border-purple-800/30 p-6 rounded-2xl">
+                       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                         <Presentation className="text-purple-500" size={20} /> Idea Pitching (Parallel Sessions)
+                       </h3>
+                       <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                         Teams will present their ideas across 8 parallel venues. Check the Venue Matrix below for your exact location.
+                       </p>
+                       <div className="flex flex-wrap gap-3 mt-4 text-xs font-semibold text-slate-500 bg-white/60 dark:bg-slate-900/50 p-3 rounded-xl border border-slate-200/50 dark:border-slate-700/50">
+                         <span><strong className="text-slate-800 dark:text-slate-200">Lunch:</strong> 1:30 PM - 2:30 PM</span>
+                         <span>•</span>
+                         <span><strong className="text-slate-800 dark:text-slate-200">Hi-Tea:</strong> 4:00 PM - 4:30 PM</span>
+                         <span>(Served at respective venues)</span>
+                       </div>
+                     </div>
+                   </div>
+                </div>
+
+             </div>
+          ) : (
+             <div className="space-y-10 relative z-10 animate-fade-in">
+                
+                <div className="relative pl-6 md:pl-0">
+                   <div className="md:grid md:grid-cols-12 gap-6 items-start">
+                     <div className="md:col-span-3 text-sm font-black text-emerald-600 dark:text-emerald-400 mb-2 md:mb-0 md:text-right pt-1.5">
+                       10:00 AM - 1:30 PM
+                     </div>
+                     <div className="md:col-span-9">
+                       <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-1">
+                         <Trophy className="text-emerald-500" size={20} /> Final Evaluation (Shortlisted Teams)
+                       </h3>
+                       <p className="text-sm text-slate-500 flex items-center gap-2 mb-3"><MapPin size={14} /> Auditorium</p>
+                       <span className="text-xs font-semibold text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-md">
+                         Hi-Tea served: 11:30 AM - 12:00 PM
+                       </span>
+                     </div>
+                   </div>
+                </div>
+
+                <ScheduleRow time="1:30 PM - 2:30 PM" title="Lunch Break" venue="Auditorium" icon={<Coffee />} />
+                
+                <ScheduleRow time="2:30 PM - 3:00 PM" title="Plenary Session I: Innovation & Product Journey" venue="Auditorium Hall 1" subText="By Mr. Siddharth Bhatter (Founder and CEO of Karkhana 
+Makerspace)" icon={<Mic />} />
+                
+                <ScheduleRow time="2:30 PM - 3:30 PM" title="Product Exhibition by Participants" venue="Auditorium" icon={<Presentation />} />
+
+                <ScheduleRow time="3:00 PM - 3:30 PM" title="Plenary Session II: Manufacturing & Entrepreneurship" venue="Auditorium Hall 1" subText="By Mr. B.R. Naresh (Founder, CZAR Solutions, Pune)" icon={<Mic />} />
+
+                <ScheduleRow time="3:30 PM - 4:00 PM" title="Hi-Tea" venue="Hall 3" icon={<Coffee />} />
+                
+                <ScheduleRow time="4:00 PM - 5:00 PM" title="Valedictory & Award Ceremony" venue="Auditorium" icon={<Trophy className="text-saffron-500" />} />
+             </div>
+          )}
+        </div>
+      </section>
+
+      {/* --- VENUE ALLOTMENTS --- */}
+      <section className="bg-slate-50 dark:bg-[#060913] py-24 border-t border-slate-200 dark:border-slate-800">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <span className="text-blue-600 dark:text-blue-400 font-bold tracking-widest text-xs uppercase mb-2 block">
+              Day 1 • 19.03.2026
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">
+              Venue Matrix
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+              Find your designated pitching room based on your domain (download the pdf to get the complete lists of teams alloted per venue). Please arrive at your venue 30 minutes prior to the start time.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+            {VENUES.map((venue, idx) => (
+              <div key={idx} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 md:p-8 hover:shadow-xl hover:border-blue-500/30 transition-all group">
+                
+                <div className="flex justify-between items-start mb-6">
+                   <div className="flex items-center gap-3">
+                     <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
+                        <MapPin size={24} />
+                     </div>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">{venue.name}</h3>
+                   </div>
+                </div>
+
+                <div className="mb-6">
+                   <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Target Domains</p>
+                   <div className="flex flex-wrap gap-2">
+                     {venue.domains.map((domain, dIdx) => (
+                       <span key={dIdx} className="px-3 py-1.5 bg-blue-50 dark:bg-blue-900/10 text-blue-700 dark:text-blue-300 text-xs font-semibold rounded-lg border border-blue-100 dark:border-blue-800/30">
+                         {domain}
+                       </span>
+                     ))}
+                   </div>
+                </div>
+
+                <div className="border-t border-slate-100 dark:border-slate-800 pt-5">
+                   <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Session Chairs</p>
+                   <div className="space-y-2">
+                     {venue.chairs.map((chair, cIdx) => (
+                        <div key={cIdx} className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                          <div className="w-1.5 h-1.5 rounded-full bg-saffron-500"></div> {chair}
+                        </div>
+                     ))}
+                   </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+    {/* </div> */}
 
       
-<section className="container mx-auto px-4 md:px-6 mb-16 text-center">
+<section className="container mx-auto px-4 md:px-6 mb-16 mt-16 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-bold uppercase tracking-widest mb-6">
           <CheckCircle size={16} /> Final Phase
         </div>
@@ -2762,3 +3033,7 @@ const Shortlisted: React.FC = () => {
 };
 
 export default Shortlisted;
+
+// function useState<T>(arg0: number): [any, any] {
+//   throw new Error('Function not implemented.');
+// }
