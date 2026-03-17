@@ -2499,8 +2499,8 @@ const BUDGET_HOTELS = [
 ];
 
 const VENUES = [
-  { name: "ME G08", domains: ["Advanced Material & Manufacturing", "Emerging AgTech", "Aerospace"], chairs: ["Mr. B.R. Naresh", "Dr. Agarwal"] },
-  { name: "Auditorium - ME G10", domains: ["Energy", "Environment", "Climate and Sustainability"], chairs: ["Mr. Ajit Ekbote", "Mr. Sachin Gupta"] },
+  { name: "Mech Engg. G08", domains: ["Advanced Material & Manufacturing", "Emerging AgTech", "Aerospace"], chairs: ["Mr. B.R. Naresh", "Dr. Agarwal"] },
+  { name: "Mech Engg. G10", domains: ["Energy", "Environment", "Climate and Sustainability"], chairs: ["Mr. Ajit Ekbote", "Mr. Sachin Gupta"] },
   { name: "Auditorium - Hall 2", domains: ["Artificial Intelligence", "IoT", "Machine Learning"], chairs: ["Mr. Vikas Shrivastav", "Mr. Nandan Kr. Singh"] },
   { name: "Auditorium - Hall 1", domains: ["Artificial Intelligence", "Applied Computer Science"], chairs: ["Mr. Saurav Sao", "Dr. Shanu K. Rakesh"] },
   { name: "ECE - CR-7", domains: ["Health & Medical Tech", "Digital Communication", "Quantum Science", "Cyber Security", "Semiconductor Mfg."], chairs: ["Ms. Namrata Tatiya Jain", "Mr. Ashish Khare"] },
