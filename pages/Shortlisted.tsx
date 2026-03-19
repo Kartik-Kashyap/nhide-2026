@@ -2439,7 +2439,7 @@
 
 
 import React from 'react';
-import { Trophy, Download, AlertCircle, MapPin, Phone, Building, Home as HomeIcon, FileText, CheckCircle, Info, Presentation, Target, Lightbulb, Zap, Scale, Briefcase, Users, Timer, Coffee, Clock, Star, Mic, Calendar } from 'lucide-react';
+import { Trophy, Download, AlertCircle, MapPin, Phone, Building, Home as HomeIcon, FileText, CheckCircle, Info, Presentation, Target, Lightbulb, Zap, Scale, Briefcase, Users, Timer, Coffee, Clock, Star, Mic, Calendar, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 
 // ScheduleRow Component
@@ -2516,6 +2516,51 @@ const Shortlisted: React.FC = () => {
     // <div className="animate-fade-in pt-12 pb-24">
 
       <div className="animate-fade-in pt-12 pb-24 font-sans selection:bg-blue-500 selection:text-white">
+      
+      <section className="container mx-auto px-4 md:px-6 mb-16 text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-saffron-500/10 border border-saffron-500/20 text-saffron-600 dark:text-saffron-400 text-sm font-bold uppercase tracking-widest mb-6">
+          <Trophy size={16} /> Grand Finale
+        </div>
+        <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+          Day 2 <span className="text-transparent bg-clip-text bg-gradient-to-r from-saffron-500 to-red-500">Finalists</span>
+        </h1>
+        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          The preliminary pitches are complete! Check the official shortlist below to see which teams are advancing to the final evaluation round.
+        </p>
+      </section>
+
+      {/* --- NEW: DAY 2 FINALISTS DOWNLOAD --- */}
+      <section className="container mx-auto px-4 md:px-6 max-w-5xl mb-24">
+        <div className="bg-gradient-to-br from-saffron-500 to-red-600 rounded-3xl p-1 shadow-2xl shadow-saffron-500/20 animate-fade-in-up">
+          <div className="bg-white dark:bg-slate-900 rounded-[1.4rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 h-full relative overflow-hidden">
+            
+            {/* Background flourish */}
+            <div className="absolute -right-10 -top-10 text-saffron-500/10 rotate-12 pointer-events-none">
+              <Trophy size={150} />
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left relative z-10">
+              <div className="w-20 h-20 bg-saffron-50 dark:bg-saffron-900/20 rounded-full flex items-center justify-center text-saffron-500 shrink-0">
+                <Sparkles size={40} />
+              </div>
+              <div>
+                <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-2">Grand Finale Shortlist</h2>
+                <p className="text-slate-600 dark:text-slate-400 max-w-md text-sm md:text-base">
+                  Congratulations to the top teams moving forward! Download the official PDF to verify your team's status and schedule for the final pitch.
+                </p>
+              </div>
+            </div>
+            
+            <a 
+              href="/NHIDE_2026_Grand_Finale_Teams.pdf" 
+              download
+              className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-saffron-500 to-red-500 hover:from-saffron-600 hover:to-red-600 text-white font-bold text-lg rounded-2xl shadow-lg shadow-red-500/25 transition-all hover:-translate-y-1 hover:scale-105 shrink-0 relative z-10"
+            >
+              <Download size={20} /> Download Results
+            </a>
+          </div>
+        </div>
+      </section>
       
       {/* --- HERO SECTION --- */}
       <section className="container mx-auto px-4 md:px-6 mb-16 text-center">

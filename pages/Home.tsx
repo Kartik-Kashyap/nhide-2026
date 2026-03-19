@@ -146,7 +146,7 @@ const Home: React.FC = () => {
             </Link> */}
 
 
-            <Link 
+            {/* <Link 
               to="/shortlisted" 
               className="group inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-bold uppercase tracking-widest mb-8 animate-fade-in-up shadow-lg shadow-emerald-500/30 hover:scale-105 transition-transform"
             >
@@ -155,7 +155,19 @@ const Home: React.FC = () => {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
               </span>
               Itinerary + Venue Matrix + Pitching Guidelines are out! View it here <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </Link> */}
+
+            <Link 
+                to="/shortlisted" 
+                className="group inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-saffron-500 to-red-500 text-white text-xs sm:text-sm font-bold uppercase tracking-widest shadow-lg shadow-saffron-500/30 hover:scale-105 transition-transform"
+              >
+                <span className="relative flex h-2.5 w-2.5 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+                </span>
+                Day 2 Finalists Announced! <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link> 
+              <br></br>
 
             
 
